@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+
+.footer{
+    margin-top: auto;
+}
+
+:host {
+    display: flex;
+    min-height: 100%; 
+    flex-direction: column;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }
+
+h1{
+    text-align: center;
+}
+.head{
+    background-color: white;
+    padding-bottom: 1em;
+  }
+
+  app-footer{
+    background-color: #725325;
+    color: white;
+  }
+
+  main-nav{
+    z-index: 5;
+  }
