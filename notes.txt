@@ -1,0 +1,9 @@
+Notes:
+bootstrap and @angular/language-service aren't being used
+
+if you have to restart and ng build doesn't work, use 
+$env:NODE_OPTIONS = "--openssl-legacy-provider"
+and then 
+ng build
+
+use (npm-check -u) to check what needs to be updated

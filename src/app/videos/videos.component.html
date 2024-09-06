@@ -1,0 +1,56 @@
+
+
+<div class="container video-body">  
+    
+    <div class="row">
+
+        <div class="col-md-12 text-center my-text-info">
+            <h1>Music Videos</h1>
+            
+            <p>Here are some music videos that we have made, we hope you enjoy listening to them as much as we had filming them.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+           <div *ngFor="let vid of videoListCol_one" > 
+    
+            <div class="video-container">
+
+                <div class="iframe-container">
+                    <iframe width="100%" height="315" [src]="getEmbedUrl(vid)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+            <div class="text-center">{{ vid.name }}</div>
+            <div class="text-center">{{ vid.group }}</div>
+</div>
+            </div>
+
+        </div>
+        
+        <div class="col-md-6">
+
+            <div *ngFor="let vid of videoListCol_two"> 
+    
+                <div class="video-container">
+    
+                    <div class="iframe-container">
+                        <iframe width="560" height="315" [src]="getEmbedUrl(vid)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                <div class="text-center">{{ vid.name }}</div>
+                <div class="text-center">{{ vid.group }}</div>
+                </div>
+                </div>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+
+

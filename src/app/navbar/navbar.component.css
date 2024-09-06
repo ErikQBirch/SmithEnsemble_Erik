@@ -1,0 +1,43 @@
+
+.my-nav{
+
+
+    font-size: 1.2em;
+    color: #2f4e5c;
+    font-weight: bolder;
+
+    /* -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999; */
+    box-shadow: 0 10px 5px -10px #999;
+}
+
+
+.dropdown-menu{
+    height: auto;
+    }
+    
+
+    
+    .header{
+        font-size: 1em;
+        color: #2f4e5c;
+        font-weight: bolder;
+    }
+    
+    
+    ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        padding-right: 3em;
+    }
+    
+    li{
+   padding: 1em;
+    }
+    
+    
+    a{
+        text-decoration: none;
+    }
+    

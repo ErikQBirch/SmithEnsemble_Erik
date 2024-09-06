@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Yesteryear&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+
+
+.footer{
+    margin-top: auto;
+    padding-top: 1em;
+    
+}
+
+article {
+  font-family: "Tangerine", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+:host {
+    display: flex;
+    min-height: 100%; 
+    flex-direction: column;
+  }
+  
+  .Site-content {
+    flex: 1;
+  }
+
+h1{
+    text-align: center;
+}
+.head{
+    background-color: white;
+    padding-bottom: 1em;
+  }
+
+  app-footer{
+    background-color: #725325;
+    color: white;
+  }
+
+  main-nav{
+    z-index: 5;
+  }
