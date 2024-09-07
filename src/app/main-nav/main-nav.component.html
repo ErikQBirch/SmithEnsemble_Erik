@@ -32,6 +32,7 @@
          </mat-menu>
 
       <!-- <a mat-list-item routerLink="/contact" >Contact Us</a> -->
+      <a mat-list-item routerLink="/buy-cds"    (click)="drawer.toggle()">Buy-CDs</a>
       <a mat-list-item routerLink="/about"    (click)="drawer.toggle()">About Us</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -76,7 +77,8 @@
       <mat-menu #smithsix="matMenu">
         <app-smithsixlinks></app-smithsixlinks>
           </mat-menu>
-     <a routerLink="/about" >About Us</a> 
+          <a routerLink="/buy-cds" >Buy CDs</a> 
+          <a routerLink="/about" >About Us</a> 
      </div>
 
     </mat-toolbar>
