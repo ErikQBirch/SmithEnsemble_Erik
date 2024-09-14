@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { render } from 'creditcardpayments/creditCardPayments';
 
 @Component({
   selector: 'app-buy-cds',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuyCdsComponent implements OnInit {
 
-  constructor() { }
+  constructor() { 
+    render(
+      {
+        id:"#myPaypalButtons",
+        currency:"USD",
+        value:"1.00",
+        onApprove:(details) => {
+          alert("Transaction Successful")
+        }
+      }
+    )
+  }
 
   ngOnInit(): void {
   }
