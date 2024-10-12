@@ -1,0 +1,14 @@
+1. Create Display of Products/cds with add-to-cart buttons
+2. Create Pop-up for product details
+3. Create Pop-up for shopping-cart (where the paypal stuff will be visible)
+4. Create form for entering info to be emailed to seller
+
+
+
+
+About Us: => change into Contact Us (with email)
+Front Page: have sample video with sample audio
+Secure Website
+Videos: add bye bye blues and be my little bumblee
+Buy CDs: change into Shop
+Simplify Nav Bar (and mobile);

@@ -10,3 +10,9 @@ use (npm-check -u) to check what needs to be updated
 
 
 PayPal_SmithEnsemble_Erik_ClientID: AdjVrGt8DuajygU0i0X2qFkkOyWHP6byRrtFWkEIM5hEV3vsKGHuL25gouxsjXrQ1OvLGO2EAyaIO7yg
+
+
+https://www.youtube.com/watch?v=-HeadgoqJ7A
+https://www.youtube.com/watch?v=jJVoTZtEAgk
+https://www.youtube.com/watch?v=d-X18VdLfCA
+https://developer.paypal.com/dashboard/accounts/edit/4815630535392496472?accountName=sb-nh2f129615986@personal.example.com

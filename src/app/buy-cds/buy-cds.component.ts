@@ -15,7 +15,7 @@ export class BuyCdsComponent implements OnInit {
         currency:"USD",
         value:"1.00",
         onApprove:(details) => {
-          alert("Transaction Successful")
+          alert("This would also send an email to the seller about the transaction and the info involved! \nhttps://www.youtube.com/watch?v=-HeadgoqJ7A")
         }
       }
     )

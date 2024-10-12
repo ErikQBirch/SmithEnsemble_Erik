@@ -3,8 +3,40 @@
     
   <div class="row">
       <div class="col">
-            <h1 >About Us</h1>
+            <h1 >Buy CDs</h1>
+            <section class="sales-floor">
+                <article class="purchase-item">
+                    <a href="*">
+                        <figure>
+                            <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
+                        </figure>
+                        <h2>All Things Come of Thee</h2>
+                    </a>
+                </article>
+                <article class="purchase-item">
+                    <a href="*">
+                        <figure>
+                            <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
+                        </figure>
+                        <h2>The Smith Six: Brightly Beams</h2>
+                    </a>
+                </article>
+            </section>
+
+
             <div id="myPaypalButtons"></div>
+
+            <form action="https://api.web3forms.com/submit" method="POST">
+
+                <input type="hidden" name="access_key" value="9eb85861-2991-4d54-b6b3-95d5c56c6ba0">
+            
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="email" required>
+                <textarea name="message" placeholder="message" required></textarea>
+                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+                <button type="submit">Submit Form</button>
+            
+            </form>
       </div>
   </div>
   
