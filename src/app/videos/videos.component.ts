@@ -25,27 +25,26 @@ export class VideosComponent implements OnInit {
       group: "The Smith Ensemble",
       embed: "kEUMsWoW8V8"
     },
-
     {
       name: "Pilgrim Song",
       group: "The Smith Ensemble",
       embed: "n9a_5N3vSJg"
     },
- 
     {
       name: "Born on a new Day",
       group: "The Smith Ensemble",
       embed: "CjmUJSkxqIg"
     },
-
     {
       name: "Side By Side",
       group:"The Smith Six",
       embed: "HKf1Jwho0rc"
+    },
+    {
+      name: "Be My Little Baby Bumblebee",
+      group: "The Smith Six",
+      embed: "15DUKIx7p-w"
     }
-   
-
-
   ];
 
   videoListCol_two = [
@@ -64,24 +63,26 @@ export class VideosComponent implements OnInit {
       group: "The Smith Ensemble",
       embed: "9QBN3HBA9iY"
     },
-
     {
       name: "Amazing Grace",
       group: "The Smith Ensemble",
       embed: "qu3MSnV7WRA"
     },
-
     {
       name: "Pie Jesu",
       group: "The Smith Ensemble",
       embed: "qrvr9EWuhRc"
     }
     ,
-
     {
       name: "Prayer of the Children",
       group:"The Smith Six",
       embed: "tzqJwQ1htZE"
+    },
+    {
+      name: "Bye, Bye Blues",
+      group: "The Smith Six",
+      embed: "I5JQOJmTZh0"
     }
     
 
