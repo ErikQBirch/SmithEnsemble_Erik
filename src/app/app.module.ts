@@ -30,6 +30,7 @@ import { SmithsixlinksComponent } from './smithsixlinks/smithsixlinks.component'
 import { SmithensemblelinksComponent } from './smithensemblelinks/smithensemblelinks.component';
 import { IconsSmithsixComponent } from './icons-smithsix/icons-smithsix.component';
 import { BuyCdsComponent } from './buy-cds/buy-cds.component';
+import { ShopPopUpComponent } from './shop-pop-up/shop-pop-up.component';
 
 // import { NgxPayPalModule } from 'ngx-paypal';
 
@@ -61,6 +62,7 @@ const appRoutes: Routes = [
     SmithensemblelinksComponent,
     IconsSmithsixComponent,
     BuyCdsComponent,
+    ShopPopUpComponent,
 
  
   
