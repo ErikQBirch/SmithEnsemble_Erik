@@ -4,11 +4,11 @@ import { MailService } from '../services/mail.service';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-shop-pop-up',
-  templateUrl: './shop-pop-up.component.html',
-  styleUrls: ['./shop-pop-up.component.css']
+  selector: 'app-buy-cds-cart',
+  templateUrl: './buy-cds-cart.component.html',
+  styleUrls: ['./buy-cds-cart.component.css']
 })
-export class ShopPopUpComponent implements OnInit {
+export class BuyCdsCartComponent implements OnInit {
 
   @Input() childBucket1 = "";
   @Input() childBucket2 = ""
