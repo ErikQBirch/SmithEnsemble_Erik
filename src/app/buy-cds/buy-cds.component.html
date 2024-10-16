@@ -5,32 +5,32 @@
       <div class="col">
             <h1 >Buy CDs</h1>
             <section class="sales-floor">
-                <article class="purchase-item" (click)="showItemInfo = true">
+                <article class="purchase-item" (click)="selectItem('AllThings')">
                         <figure>
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
                         </figure>
                         <h2>All Things Come of Thee</h2>
 
                 </article>
-                <article class="purchase-item" (click)="showItemInfo = true">
+                <article class="purchase-item" (click)="selectItem('BrightlyBeams')">
                         <figure>
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
                         </figure>
                         <h2>The Smith Six: Brightly Beams</h2>
                 </article>
             </section>
+            <button (click)="showCart()">Show Cart</button>
 
             <app-buy-cds-cart 
-              [childBucket1]="parentPackage1" 
-              [childBucket2]="parentPackage2"
-              
+                [(cartPopUp)]="showCartPopUp"
             ></app-buy-cds-cart>
 
-                <app-buy-cds-info
-                    [(childBucket)] = "showItemInfo"
-                >
+            <app-buy-cds-info
+                [(itemPopUp)] = "showItemPopUp"
+                [chosenItem] = "selectedItem"
+            >
 
-                </app-buy-cds-info>
+            </app-buy-cds-info>
 
 
 

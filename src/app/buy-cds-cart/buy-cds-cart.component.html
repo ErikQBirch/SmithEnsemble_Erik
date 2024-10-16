@@ -3,9 +3,8 @@
     'background-color':'yellow',
     'display':'none'}"  
 > -->
-<section>
-  <p>You owe {{TotalCost}}! {{childBucket1}}</p>
-  
+
+<section #popUp_cart> 
   <div class="mt-8">
     <form
       class="flex flex-col gap-3"
@@ -103,8 +102,8 @@
   
   <div id="myPaypalButtons"></div>
   
-  <p
+  <!-- <p
     [ngStyle]="{'background-color':'red'}"
-  >{{childBucket2}}</p>
+  >{{childBucket2}}</p> -->
 
 </section>

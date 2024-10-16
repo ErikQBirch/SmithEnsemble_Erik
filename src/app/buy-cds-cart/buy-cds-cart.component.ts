@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, Output, OnChanges, EventEmitter, AfterViewInit, ViewChild, SimpleChanges } from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { MailService } from '../services/mail.service';
 import { NgForm } from '@angular/forms';
@@ -8,10 +8,13 @@ import { NgForm } from '@angular/forms';
   templateUrl: './buy-cds-cart.component.html',
   styleUrls: ['./buy-cds-cart.component.css']
 })
-export class BuyCdsCartComponent implements OnInit {
+export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
-  @Input() childBucket1 = "";
-  @Input() childBucket2 = ""
+
+  @Input() cartPopUp:boolean;
+  @ViewChild('popUp_cart') popUp_cart!: ElementRef;
+
+
 
   TotalCost = '$100'
   totalCost: string = "You just spent $1.00! Yay!"
@@ -82,6 +85,21 @@ export class BuyCdsCartComponent implements OnInit {
   } //
 
 
+  ngAfterViewInit(): void{
+    console.log(100)
+    // this.popUp_cart.nativeElement.style = {'display': 'none'}
+    if (!this.cartPopUp){
+      this.popUp_cart.nativeElement.style.display = "none";
+    }
+    else {
+      this.popUp_cart.nativeElement.style.display = "flex";
+    }
+    console.log(this.popUp_cart.nativeElement.style);
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.ngAfterViewInit();
+  }
 
 
 

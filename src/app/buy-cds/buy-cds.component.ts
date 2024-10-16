@@ -18,9 +18,21 @@ export class BuyCdsComponent implements OnInit {
   parentPackage1 = "Where's my money?"
   parentPackage2 ="Pay up sonny!"
 
-  showItemInfo = false;
+  showItemPopUp = false;
+  selectedItem = "";
+
+  showCartPopUp = false;
 
 
+
+  selectItem(itemName){
+    this.showItemPopUp = true;
+    this.selectedItem = itemName;
+  }
+
+  showCart(){
+    this.showCartPopUp = true;
+  }
 
   ngOnInit(): void {
   }

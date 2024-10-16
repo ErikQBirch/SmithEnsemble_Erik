@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, AfterViewChecked, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, AfterViewChecked, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
+// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'app-buy-cds-info',
@@ -7,32 +8,28 @@ import { Component, OnInit, Input, Output, AfterViewChecked, AfterViewInit, OnCh
 })
 export class BuyCdsInfoComponent implements OnInit, OnChanges{
 
-  @Input() childBucket:boolean;
-  @Output() showPopUp:boolean;
-
+  @Input() itemPopUp:boolean;
+  @Output() itemPopUpChange = new EventEmitter<boolean>();
+  @Input() chosenItem:string;
 
 
   constructor() { }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.childBucket, this.showPopUp);
-    console.log('param changes', changes);
-    // console.log(button)
-    // if(changes.childBucket.firstChange) return;
-    this.parseData();
+  
+  closePopUp(){
+    this.itemPopUp = false;
+    this.itemPopUpChange.emit(this.itemPopUp);
   }
 
-  // ngAfterViewInit(): void {}
-  // ngAfterViewChecked(): void {
-    
-  // }
 
-  ngOnInit(): void {
-    this.parseData();  
-    console.log(this.childBucket, this.showPopUp);  
+
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log(this.itemPopUp);
+    // console.log('param changes', changes);
+  }
+
+
+  ngOnInit(): void {  
   }
   
-  parseData(){
-    this.showPopUp = this.childBucket;
-  }
 }
