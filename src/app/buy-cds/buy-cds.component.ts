@@ -18,6 +18,8 @@ export class BuyCdsComponent implements OnInit {
   parentPackage1 = "Where's my money?"
   parentPackage2 ="Pay up sonny!"
 
+  showItemInfo = false;
+
 
 
   ngOnInit(): void {

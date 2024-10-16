@@ -5,20 +5,18 @@
       <div class="col">
             <h1 >Buy CDs</h1>
             <section class="sales-floor">
-                <article class="purchase-item">
+                <article class="purchase-item" (click)="showItemInfo = true">
                         <figure>
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
                         </figure>
                         <h2>All Things Come of Thee</h2>
 
                 </article>
-                <article class="purchase-item">
-                    <a href="*">
+                <article class="purchase-item" (click)="showItemInfo = true">
                         <figure>
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
                         </figure>
                         <h2>The Smith Six: Brightly Beams</h2>
-                    </a>
                 </article>
             </section>
 
@@ -28,6 +26,11 @@
               
             ></app-buy-cds-cart>
 
+                <app-buy-cds-info
+                    [(childBucket)] = "showItemInfo"
+                >
+
+                </app-buy-cds-info>
 
 
 

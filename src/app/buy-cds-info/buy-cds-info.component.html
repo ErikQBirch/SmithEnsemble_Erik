@@ -1,1 +1,6 @@
 <p>buy-cds-info works!</p>
+<ng-template
+  [ngIf]="showPopUp">
+    <h1>Pop Up Works</h1>
+    <button (click)="showPopUp=false;">X</button>
+</ng-template>

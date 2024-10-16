@@ -17,6 +17,7 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: space-around;
+    flex-direction: column;
   }
   .sales-floor .purchase-item {
     width: 45%;
@@ -24,14 +25,15 @@ h3 {
     border-radius: 1rem;
     overflow: hidden;
     border: 1px solid rgba(100, 100, 100, 0.5);
+    margin: 1rem auto;
   }
-  .sales-floor .purchase-item a figure {
+  .sales-floor .purchase-item figure {
     width: 100%;
   }
-  .sales-floor .purchase-item a figure img {
+  .sales-floor .purchase-item figure img {
     width: 100%;
   }
-  .sales-floor .purchase-item a h2 {
+  .sales-floor .purchase-item h2 {
     font-size: 8pt;
   }
 }/*# sourceMappingURL=buy-cds.component.css.map */
