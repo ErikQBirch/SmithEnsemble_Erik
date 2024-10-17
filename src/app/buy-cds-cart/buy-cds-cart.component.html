@@ -4,6 +4,11 @@
     'display':'none'}"  
 > -->
 
+<ng-template
+  [ngIf]="cartPopUp">
+</ng-template>
+
+
 <section #popUp_cart> 
   <div class="mt-8">
     <form
@@ -99,11 +104,10 @@
     </form>
   
   </div>
-  
   <div id="myPaypalButtons"></div>
   
   <!-- <p
-    [ngStyle]="{'background-color':'red'}"
+  [ngStyle]="{'background-color':'red'}"
   >{{childBucket2}}</p> -->
-
+  
 </section>

@@ -86,15 +86,15 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   ngAfterViewInit(): void{
-    console.log(100)
-    // this.popUp_cart.nativeElement.style = {'display': 'none'}
-    if (!this.cartPopUp){
-      this.popUp_cart.nativeElement.style.display = "none";
-    }
-    else {
-      this.popUp_cart.nativeElement.style.display = "flex";
-    }
-    console.log(this.popUp_cart.nativeElement.style);
+    // console.log(100)
+    // // this.popUp_cart.nativeElement.style = {'display': 'none'}
+    // if (!this.cartPopUp){
+    //   this.popUp_cart.nativeElement.style.display = "none";
+    // }
+    // else {
+    //   this.popUp_cart.nativeElement.style.display = "flex";
+    // }
+    // console.log(this.popUp_cart.nativeElement.style);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
