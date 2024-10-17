@@ -13,6 +13,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   @Input() cartPopUp:boolean;
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
+  @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
 
 
 
@@ -86,6 +87,15 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   ngAfterViewInit(): void{
+
+    setTimeout(function(){
+      // console.log(this.myPaypalButtons);
+      if (!this.myPaypalButtons.innerHTML){
+        location.reload();
+      }
+    },100)
+
+
     // console.log(100)
     // // this.popUp_cart.nativeElement.style = {'display': 'none'}
     // if (!this.cartPopUp){

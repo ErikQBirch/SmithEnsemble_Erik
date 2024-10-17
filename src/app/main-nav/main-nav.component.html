@@ -9,7 +9,7 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/ensemble"  (click)="drawer.toggle()">The Smith Ensemble</a>
+      <a mat-list-item routerLink="/"  (click)="drawer.toggle()">The Smith Ensemble</a>
       <a mat-list-item routerLink="/smithsix"  (click)="drawer.toggle()">The Smith Six</a>
       <a mat-list-item routerLink="/videos"    (click)="drawer.toggle()">Videos</a>
       <!-- <a><button mat-button [matMenuTriggerFor]="menu">Music</button></a>
@@ -56,7 +56,7 @@
       
       <div 
       *ngIf="!(isHandset$ | async)">        
-      <a  routerLink="/ensemble">The Smith Ensemble</a>
+      <a  routerLink="/">The Smith Ensemble</a>
       <a  routerLink="/smithsix">The Smith Six</a>
       <a routerLink="/videos" >Videos</a>
       <!-- <button mat-button [matMenuTriggerFor]="menu">Music</button>
