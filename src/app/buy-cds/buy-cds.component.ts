@@ -25,7 +25,7 @@ export class BuyCdsComponent implements OnInit {
 
 
 
-  selectItem(itemName){
+  selectItem(itemName:string){
     this.showItemPopUp = true;
     this.selectedItem = itemName;
   }

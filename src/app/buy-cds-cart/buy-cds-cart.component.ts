@@ -15,7 +15,10 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
 
+  
 
+
+  // checkOutNow = false;
 
   TotalCost = '$100'
   totalCost: string = "You just spent $1.00! Yay!"
@@ -38,6 +41,13 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
     setTimeout(() => {
       this.showAlert = false;
     }, 5000);
+  }
+
+
+  goCheckOut(){
+    // console.log(this.myPaypalButtons);
+    // this.checkOutNow = true;
+    // this.myPaypalButtons.nativeElement.style.display = "flex";
   }
   
   async submitEmail(contactForm: NgForm) {
@@ -92,6 +102,10 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
       // console.log(this.myPaypalButtons);
       if (!this.myPaypalButtons.innerHTML){
         location.reload();
+      }
+      else{
+        // this.myPaypalButtons.style.display = "none";
+        // this.myPaypalButtons.style.opacity= "0";
       }
     },100)
 
