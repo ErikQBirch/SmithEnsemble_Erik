@@ -10,27 +10,29 @@
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
                         </figure>
                         <h2>All Things Come of Thee</h2>
-
+                        <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
                 </article>
                 <article class="purchase-item" (click)="selectItem('BrightlyBeams')">
                         <figure>
                             <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
                         </figure>
                         <h2>The Smith Six: Brightly Beams</h2>
+                        <!-- <input type="number" id="BrightlyBeams" *BrightlyBeams placeholder="0" hidden> -->
                 </article>
             </section>
             <button (click)="showCart()">Show Cart</button>
-
-            <app-buy-cds-cart 
-                [(cartPopUp)]="showCartPopUp"
-            ></app-buy-cds-cart>
-
-            <app-buy-cds-info
-                [(itemPopUp)] = "showItemPopUp"
-                [chosenItem] = "selectedItem"
-            >
-
-            </app-buy-cds-info>
+            <section>
+                <app-buy-cds-cart 
+                    [(cartPopUp)]="showCartPopUp"
+                ></app-buy-cds-cart>
+            </section>
+            <section>
+                <app-buy-cds-info
+                    [(itemPopUp)] = "showItemPopUp"
+                    [chosenItem] = "selectedItem"
+                >
+                </app-buy-cds-info>
+            </section>
 
 
 

@@ -14,6 +14,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @Input() cartPopUp:boolean;
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
+  @ViewChild('contactForm') contactForm!: NgForm;
 
   
 
@@ -22,15 +23,18 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   TotalCost = '$100'
   totalCost: string = "You just spent $1.00! Yay!"
+  AllThingsCount: number = 1;
+  BrightlyBeamsCount: number = 1;
+  PurchaseCost: number = 2.99;
   
   private color: string = '';
   showAlert: boolean = false;
   alertMessage: string = '';
   onSubmit: boolean = false;
   contactFormValues = {
-    name: '',
-    email: '',
-    body: '',
+    name: 'Erik Q. Birch',
+    email: 'erikqbirch@gmail.com',
+    body: `All Things: ${this.AllThingsCount}\nBrightly Beams: ${this.BrightlyBeamsCount}\nPurchase Cost: ${this.PurchaseCost}`,
   };
 
   get alertColor() {
@@ -89,7 +93,9 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
         currency:"USD",
         value:"1.00",
         onApprove:(details) => {
-          alert(this.totalCost)
+          alert(this.totalCost);
+          console.log(this.contactFormValues.name);
+          this.submitEmail(this.contactForm)
         }
       }
     )
