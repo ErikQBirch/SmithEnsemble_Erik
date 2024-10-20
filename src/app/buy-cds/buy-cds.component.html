@@ -24,12 +24,14 @@
             <section>
                 <app-buy-cds-cart 
                     [(cartPopUp)]="showCartPopUp"
+                    [(soonToPurchase)]="fullOrder"
                 ></app-buy-cds-cart>
             </section>
             <section>
                 <app-buy-cds-info
                     [(itemPopUp)] = "showItemPopUp"
                     [chosenItem] = "selectedItem"
+                    (addedOrder)="parentUpdate($event)"
                 >
                 </app-buy-cds-info>
             </section>

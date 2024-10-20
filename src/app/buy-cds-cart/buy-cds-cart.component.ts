@@ -3,6 +3,7 @@ import { render } from 'creditcardpayments/creditCardPayments';
 import { MailService } from '../services/mail.service';
 import { NgForm } from '@angular/forms';
 
+import { OrderInfo } from '../buy-cds-info/orderInfo';
 @Component({
   selector: 'app-buy-cds-cart',
   templateUrl: './buy-cds-cart.component.html',
@@ -15,7 +16,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
   @ViewChild('contactForm') contactForm!: NgForm;
-
+  @Input() soonToPurchase: OrderInfo = new OrderInfo;
   
 
 
@@ -31,10 +32,11 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   showAlert: boolean = false;
   alertMessage: string = '';
   onSubmit: boolean = false;
+  fullOrder: string = '';
   contactFormValues = {
     name: 'Erik Q. Birch',
     email: 'erikqbirch@gmail.com',
-    body: `All Things: ${this.AllThingsCount}\nBrightly Beams: ${this.BrightlyBeamsCount}\nPurchase Cost: ${this.PurchaseCost}`,
+    body: `soonToPurchase: ${this.soonToPurchase.orderName}\nAll Things: ${this.AllThingsCount}\nBrightly Beams: ${this.BrightlyBeamsCount}\nPurchase Cost: ${this.PurchaseCost}`,
   };
 
   get alertColor() {
@@ -49,6 +51,11 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   goCheckOut(){
+    console.log(this.soonToPurchase, "CHANGES_IN_CART");
+    // this.soonToPurchase.forEach(element => {
+      
+    // });
+
     // console.log(this.myPaypalButtons);
     // this.checkOutNow = true;
     // this.myPaypalButtons.nativeElement.style.display = "flex";
@@ -128,7 +135,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.ngAfterViewInit();
+    console.log(changes);
+
   }
 
 

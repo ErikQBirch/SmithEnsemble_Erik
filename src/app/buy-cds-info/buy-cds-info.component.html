@@ -1,5 +1,20 @@
 <ng-template
   [ngIf]="itemPopUp">
-    <h1>Chosen Item: {{chosenItem}}</h1>
-    <button (click)="closePopUp();">X</button>
+    <section>
+      <div id="productImg" *productImg></div>
+      <div id="productInfo">
+        <h1 id="productName"></h1>
+        <ol>
+          <li>Song</li>
+          <li>Song</li>
+          <li>Song</li>
+        </ol>
+        <div id="productInputs">
+          <!-- <input type="number" id="productQuantity" min="0" name="productQuantity" *productQuantity/> -->
+          <input type="number" min="0" [(ngModel)]="myOrder.orderQuantity" #productQuantity value="0"/>
+          <button (click)="addToCart()">Add to Cart</button>
+        </div>
+      </div>
+      <button (click)="closePopUp();">X</button>
+    </section>
 </ng-template>

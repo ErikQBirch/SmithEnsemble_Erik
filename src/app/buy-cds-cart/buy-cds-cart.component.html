@@ -12,6 +12,9 @@
 
 <section #popUp_cart> 
   <div id="cart_display" class="layer3">
+    <ul *ngFor="let item of soonToPurchase">
+      <li>{{item.orderName}}: {{item.orderQuantity}}</li>
+    </ul>
     <button (click)="goCheckOut()">Check Out</button>
   </div>
   <div id="cart_checkout" class="layer2">
@@ -104,9 +107,9 @@
           [disabled]="contactForm.invalid || onSubmit"
           class="p-2 rounded-md font-bold uppercase text-white bg-light-color hover:bg-primary-color transition disabled:opacity-50 disabled:bg-light-color"
         >
-          <ng-container *ngIf="onSubmit === false; else submittingEmail">
+          <!-- <ng-container *ngIf="onSubmit === false; else submittingEmail">
             send
-          </ng-container>
+          </ng-container> -->
           <ng-template #submittingEmail>
             <div class="animate-spin">
               <i class="fa-solid fa-rotate-right"></i>
