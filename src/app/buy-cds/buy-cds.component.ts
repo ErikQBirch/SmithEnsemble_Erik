@@ -25,7 +25,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
 
   showCartPopUp = false;
 
-  @Input() fullOrder = []
+  @Input() myOrder = [];
 
   selectItem(itemName:string){
     this.showItemPopUp = true;
@@ -37,8 +37,14 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   }
 
   parentUpdate(addedOrder: OrderInfo){
-    this.fullOrder.push(addedOrder);
-    console.log(addedOrder, this.fullOrder);
+    if (addedOrder.orderQuantity != 0){
+      this.myOrder.push(addedOrder);
+    }
+    console.log(addedOrder, this.myOrder);
+  }
+
+  cartLengthUpdate(cartLength: number){
+    console.log(cartLength);
   }
 
   ngOnInit(): void {

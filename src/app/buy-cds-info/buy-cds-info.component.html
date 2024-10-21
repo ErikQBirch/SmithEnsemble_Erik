@@ -11,7 +11,7 @@
         </ol>
         <div id="productInputs">
           <!-- <input type="number" id="productQuantity" min="0" name="productQuantity" *productQuantity/> -->
-          <input type="number" min="0" [(ngModel)]="myOrder.orderQuantity" #productQuantity value="0"/>
+          <input type="number" min="0"  #productQuantity value="0"/>
           <button (click)="addToCart()">Add to Cart</button>
         </div>
       </div>

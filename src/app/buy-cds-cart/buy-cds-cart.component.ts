@@ -16,8 +16,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
   @ViewChild('contactForm') contactForm!: NgForm;
-  @Input() soonToPurchase: OrderInfo = new OrderInfo;
-  
+  @Input() soonToPurchase = [];
+  @Output() cartLength = new EventEmitter<number>();
 
 
   // checkOutNow = false;
@@ -32,11 +32,11 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   showAlert: boolean = false;
   alertMessage: string = '';
   onSubmit: boolean = false;
-  fullOrder: string = '';
+  fullOrder: string ='';
   contactFormValues = {
-    name: 'Erik Q. Birch',
-    email: 'erikqbirch@gmail.com',
-    body: `soonToPurchase: ${this.soonToPurchase.orderName}\nAll Things: ${this.AllThingsCount}\nBrightly Beams: ${this.BrightlyBeamsCount}\nPurchase Cost: ${this.PurchaseCost}`,
+    name: '',
+    email: '',
+    body: '',
   };
 
   get alertColor() {
@@ -51,7 +51,21 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   goCheckOut(){
-    console.log(this.soonToPurchase, "CHANGES_IN_CART");
+    console.log(this.soonToPurchase);
+
+    this.soonToPurchase.forEach(item => {
+      console.log(item);
+      this.fullOrder = this.fullOrder + `${item.orderName}: ${item.orderQuantity}\n`
+    });
+
+
+    this.contactFormValues = {
+      name: 'Erik Q. Birch',
+      email: 'erikqbirch@gmail.com',
+      body: this.fullOrder
+    };
+
+    
     // this.soonToPurchase.forEach(element => {
       
     // });
@@ -135,7 +149,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+
+    console.log('CHANGES_IN_CART', changes);
 
   }
 
@@ -145,4 +160,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   ngOnInit(): void {
   }
 
+
+  removeItem(){
+    this.cartLength.emit(this.soonToPurchase.length);
+  }
 }

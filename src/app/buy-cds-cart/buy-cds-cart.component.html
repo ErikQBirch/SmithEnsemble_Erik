@@ -13,7 +13,11 @@
 <section #popUp_cart> 
   <div id="cart_display" class="layer3">
     <ul *ngFor="let item of soonToPurchase">
-      <li>{{item.orderName}}: {{item.orderQuantity}}</li>
+      <li>
+        <span>{{item.orderName}} (${{item.orderPrice}}) </span> 
+        <span>Qty: {{item.orderQuantity}}</span>
+        <button (click)="removeItem()">Remove</button>
+      </li>
     </ul>
     <button (click)="goCheckOut()">Check Out</button>
   </div>

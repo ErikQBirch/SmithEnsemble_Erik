@@ -12,22 +12,40 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
   @Input() itemPopUp:boolean;
   @Output() itemPopUpChange = new EventEmitter<boolean>();
   @Input() chosenItem:string = "";
+  productName: string = ""
+  productPrice: number = 0;
   @ViewChild('productQuantity') productQuantity!: ElementRef;
   @Output() addedOrder = new EventEmitter<OrderInfo>();
 
 
   myOrder = new OrderInfo();
+  nullOrder = new OrderInfo();
 
   constructor() { }
 
 
   addToCart(){
-    // console.log(this.productQuantity.nativeElement.value)
+    
+    switch (this.chosenItem){
+      case "AllThings":
+        this.productName = 'The Smith Ensemble: All Things Come of Thee';
+        this.productPrice = 2.98;
+        break;
+      case "BrightlyBeams":
+        this.productName = 'The Smith Six: Brightly Beams';
+        this.productPrice = 3.99;
+        break;
+    }
+
     this.myOrder = new OrderInfo(
-      this.chosenItem,
-      this.productQuantity.nativeElement.value
+      
+      this.productName,
+      Number(this.productQuantity.nativeElement.value),
+      Number(this.productPrice)
     )
-    this.addedOrder.emit(this.myOrder)
+    this.addedOrder.emit(this.myOrder);
+
+    this.productQuantity.nativeElement.value = 0;
 
   }
 
@@ -39,8 +57,7 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
 
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log(this.itemPopUp);
-    // console.log('param changes', changes);
+    console.log('CHANGES_IN_INFO', changes);
   }
 
 

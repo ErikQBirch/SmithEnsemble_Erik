@@ -24,7 +24,8 @@
             <section>
                 <app-buy-cds-cart 
                     [(cartPopUp)]="showCartPopUp"
-                    [(soonToPurchase)]="fullOrder"
+                    [(soonToPurchase)]="myOrder"
+                    (cartLength)="cartLengthUpdate($event)"
                 ></app-buy-cds-cart>
             </section>
             <section>
