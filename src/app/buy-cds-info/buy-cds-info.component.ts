@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Input, Output, EventEmitter, AfterViewChecked, AfterViewInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
 // import { EventEmitter } from 'protractor';
 import { OrderInfo } from './orderInfo';
+import { AlbumSongs } from '../buy-cds/album-songs';
 
 @Component({
   selector: 'app-buy-cds-info',
@@ -8,7 +9,6 @@ import { OrderInfo } from './orderInfo';
   styleUrls: ['./buy-cds-info.component.css']
 })
 export class BuyCdsInfoComponent implements OnInit, OnChanges{
-
   @Input() itemPopUp:boolean;
   @Output() itemPopUpChange = new EventEmitter<boolean>();
   @Input() chosenItem:string = "";
@@ -18,14 +18,15 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
   @Output() addedOrder = new EventEmitter<OrderInfo>();
 
 
+
+  AlbumSongs = new AlbumSongs();
   myOrder = new OrderInfo();
-  nullOrder = new OrderInfo();
+  orderID = 0;
 
   constructor() { }
 
 
   addToCart(){
-    
     switch (this.chosenItem){
       case "AllThings":
         this.productName = 'The Smith Ensemble: All Things Come of Thee';
@@ -38,7 +39,7 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
     }
 
     this.myOrder = new OrderInfo(
-      
+      this.orderID = this.orderID+1,
       this.productName,
       Number(this.productQuantity.nativeElement.value),
       Number(this.productPrice)

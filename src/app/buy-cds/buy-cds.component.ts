@@ -43,8 +43,9 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     console.log(addedOrder, this.myOrder);
   }
 
-  cartLengthUpdate(cartLength: number){
-    console.log(cartLength);
+  cartUpdate(changedCart: OrderInfo[]){
+    console.log(changedCart);
+    this.myOrder = changedCart;
   }
 
   ngOnInit(): void {

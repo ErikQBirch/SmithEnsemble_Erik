@@ -16,7 +16,7 @@
       <li>
         <span>{{item.orderName}} (${{item.orderPrice}}) </span> 
         <span>Qty: {{item.orderQuantity}}</span>
-        <button (click)="removeItem()">Remove</button>
+        <button (click)="removeItem(item)">Remove</button>
       </li>
     </ul>
     <button (click)="goCheckOut()">Check Out</button>

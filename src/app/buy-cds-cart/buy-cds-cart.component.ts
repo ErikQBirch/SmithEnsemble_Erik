@@ -17,7 +17,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
   @ViewChild('contactForm') contactForm!: NgForm;
   @Input() soonToPurchase = [];
-  @Output() cartLength = new EventEmitter<number>();
+  @Output() changedCart = new EventEmitter<OrderInfo[]>();
 
 
   // checkOutNow = false;
@@ -27,12 +27,13 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   AllThingsCount: number = 1;
   BrightlyBeamsCount: number = 1;
   PurchaseCost: number = 2.99;
+  fullOrder: string ='';
+  newCart = [];
   
   private color: string = '';
   showAlert: boolean = false;
   alertMessage: string = '';
   onSubmit: boolean = false;
-  fullOrder: string ='';
   contactFormValues = {
     name: '',
     email: '',
@@ -53,6 +54,9 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   goCheckOut(){
     console.log(this.soonToPurchase);
 
+    this.fullOrder = "";//reset
+
+
     this.soonToPurchase.forEach(item => {
       console.log(item);
       this.fullOrder = this.fullOrder + `${item.orderName}: ${item.orderQuantity}\n`
@@ -64,15 +68,6 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
       email: 'erikqbirch@gmail.com',
       body: this.fullOrder
     };
-
-    
-    // this.soonToPurchase.forEach(element => {
-      
-    // });
-
-    // console.log(this.myPaypalButtons);
-    // this.checkOutNow = true;
-    // this.myPaypalButtons.nativeElement.style.display = "flex";
   }
   
   async submitEmail(contactForm: NgForm) {
@@ -161,7 +156,16 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
 
-  removeItem(){
-    this.cartLength.emit(this.soonToPurchase.length);
+  removeItem(trashOrder){
+    console.log(this.soonToPurchase);
+    this.newCart = this.soonToPurchase.filter((item)=>{return (item !=trashOrder)})
+    console.log(this.newCart);
+
+    this.soonToPurchase = this.newCart;
+    
+    this.changedCart.emit(this.soonToPurchase);
+
+
+
   }
 }

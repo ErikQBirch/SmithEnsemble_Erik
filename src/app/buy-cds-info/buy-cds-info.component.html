@@ -3,12 +3,21 @@
     <section>
       <div id="productImg" *productImg></div>
       <div id="productInfo">
-        <h1 id="productName"></h1>
-        <ol>
-          <li>Song</li>
-          <li>Song</li>
-          <li>Song</li>
-        </ol>
+        <section >
+          <h1 
+            *ngIf="chosenItem == 'AllThings'"
+            id="productName">
+              The Smith Ensemble: All Things Come of Thee
+          </h1>
+          <h1
+            *ngIf="chosenItem == 'BrightlyBeams'"
+            id="productName">
+              The Smith Six: Brightly Beams
+          </h1>
+          <ol>
+            <li *ngFor="let song of AlbumSongs.AllThings_songs">{{song}}</li>
+          </ol>
+        </section>
         <div id="productInputs">
           <!-- <input type="number" id="productQuantity" min="0" name="productQuantity" *productQuantity/> -->
           <input type="number" min="0"  #productQuantity value="0"/>
