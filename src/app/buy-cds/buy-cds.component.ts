@@ -6,7 +6,7 @@ import { NgModel } from '@angular/forms';
 import { NgModelGroup } from '@angular/forms';
 
 import { OrderInfo } from '../buy-cds-info/orderInfo';
-
+import { allCosts } from '../buy-cds-cart/allCosts';
 
 @Component({
   selector: 'app-buy-cds',
@@ -20,17 +20,24 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   @Input() salesTax: number = 0;
   shippingCost: number = 5;
   @Input() totalCost: number = 0;
-  @Input() sumTotalCost: number = 0;
-  // @Input() grandTotalCost: number = 0;
+  @Input() grandTotalCost: number = 0;
+
+  // @Input() sumTotalCost: number = 0;
+
+
+  sumTotal = 0;
+  changedTotal = 0;
+
 
   showItemPopUp = false;
   selectedItem = "";
   duplicate = false;
-  changedTotal = 0;
 
   showCartPopUp = false;
 
   @Input() myOrders = [];
+
+  customerOrder = new allCosts();
 
   selectItem(itemName:string){
     this.showItemPopUp = true;
@@ -55,37 +62,34 @@ export class BuyCdsComponent implements OnInit, OnChanges {
       }
       else{this.myOrders.push(addedOrder);}
     }
-    console.log(addedOrder, this.myOrders);
+    console.log(this.myOrders);
 
-    // this.findSumTotal(this.myOrders);
-
-    // this.totalUpCosts(this.myOrders);
+    this.additionalCosts(this.myOrders)
   }
 
-  findSumTotal(orders: OrderInfo[]){
+  additionalCosts(orders: OrderInfo[]){
+    this.changedTotal = 0;
     orders.forEach(item => {
-      this.changedTotal = this.changedTotal + item.orderPrice;
+      this.changedTotal = this.changedTotal + (item.orderPrice * item.orderQuantity);
     });
-    this.changedTotal = Math.round((this.changedTotal*0.07)*100)/100;
-    
-    console.log(this.sumTotalCost, this.changedTotal);
-    if (this.sumTotalCost != this.changedTotal){
-      this.sumTotalCost = this.changedTotal;
+    console.log(this.sumTotal, this.changedTotal)
+    if(this.sumTotal != this.changedTotal){
+      this.sumTotal = this.changedTotal;
+      this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
+      this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
     }
+    console.log(this.sumTotal, this.changedTotal, this.salesTax, this.grandTotalCost);
+    
+    this.customerOrder = new allCosts(
+      this.sumTotal,
+      this.salesTax,
+      this.shippingCost,
+      this.grandTotalCost
+    )
+
+    console.log(this.customerOrder)
   }
-
-  // totalUpCosts(orders: OrderInfo[]){
-  //   orders.forEach(item => {
-  //     this.sumTotalCost = this.sumTotalCost + item.orderPrice;
-  //   });
-  //   console.log(this.changedTotalCost, this.sumTotalCost)
-  //   if (this.sumTotalCost != this.changedTotalCost){
-  //     this.salesTax = Math.round((this.sumTotalCost * 0.07)*100)/100;
-  //     this.grandTotalCost = this.sumTotalCost + this.salesTax + this.shippingCost;
-  //     this.changedTotalCost = this.sumTotalCost;
-  //   }
-  // }
-
+ 
 
   changeOrder(changedCart: OrderInfo[]){
     console.log(changedCart);
@@ -102,3 +106,4 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   }
 
 }
+

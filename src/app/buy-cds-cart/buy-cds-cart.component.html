@@ -21,8 +21,10 @@
       </li>
     </ul>
     <div>
-      <span>Tax = ${{totalCost*0.07}}</span>
-      <span>Shipping = ${{5}}</span>
+      <span>Sum Total = ${{customerOrder.sumTotal}}</span>
+      <span>Tax = ${{customerOrder.salesTax}}</span>
+      <span>Shipping = ${{customerOrder.shipping}}</span>
+      <span>Grand Total = ${{customerOrder.grandTotal}}</span>
     </div>
     <button (click)="closeCart()">Close Cart</button>
     <!-- <ng-template [ngIf]="checkoutPopUp">

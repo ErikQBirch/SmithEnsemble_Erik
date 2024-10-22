@@ -4,6 +4,8 @@ import { MailService } from '../services/mail.service';
 import { NgForm } from '@angular/forms';
 
 import { OrderInfo } from '../buy-cds-info/orderInfo';
+import { allCosts } from './allCosts';
+
 @Component({
   selector: 'app-buy-cds-cart',
   templateUrl: './buy-cds-cart.component.html',
@@ -18,8 +20,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   @Output() checkOutPopUpChange = new EventEmitter<boolean>();
 
   // @Input() salesTax: number;
-  @Input() totalCost: number;
-  // @Input() sumTotalCost: number;
+  @Input() customerOrder: allCosts;
+  // @Input() sumcustomerOrder: number;
 
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
@@ -31,7 +33,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   // checkOutNow = false;
 
 
-  // totalCost: number = 0;
+  // customerOrder: number = 0;
   AllThingsCount: number = 1;
   BrightlyBeamsCount: number = 1;
   PurchaseCost: number = 2.99;
@@ -72,14 +74,19 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
     this.soonToPurchase.forEach(item => {
       this.fullOrder = 
         this.fullOrder + 
-        `${item.orderName} (Qty: ${item.orderQuantity})\n`
-      this.totalCost = this.totalCost + item.orderPrice;
+        `* ${item.orderName} (Qty: ${item.orderQuantity})\n`
+      // this.customerOrder = this.customerOrder + item.orderPrice;
     });
 
-    this.totalCost = this.totalCost + (this.totalCost * this.taxPercentage);
-    this.totalCost = this.totalCost + (this.shippingCost);
+    this.fullOrder = this.fullOrder + `\nSum Total: $${this.customerOrder.sumTotal}\n`
+    this.fullOrder = this.fullOrder + `Sales Tax: $${this.customerOrder.salesTax}\n`;
+    this.fullOrder = this.fullOrder + `Shipping: $${this.customerOrder.shipping}\n`;
 
-    this.fullOrder = this.fullOrder + `Total = $${Math.round(this.totalCost*100)/100}`
+    // this.customerOrder = this.customerOrder + (this.customerOrder * this.taxPercentage);
+    // this.customerOrder = this.customerOrder + (this.shippingCost);
+
+    console.log(this.customerOrder.grandTotal)
+    this.fullOrder = this.fullOrder + `Total = $${this.customerOrder.grandTotal}`
 
 
     this.contactFormValues = {
@@ -128,7 +135,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
         currency:"USD",
         value:"1.00",
         onApprove:(details) => {
-          // alert(this.totalCost);
+          // alert(this.customerOrder);
           console.log(this.contactFormValues.name);
           this.submitEmail(this.contactForm)
         }
