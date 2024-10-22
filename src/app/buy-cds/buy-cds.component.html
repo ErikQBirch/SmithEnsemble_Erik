@@ -25,14 +25,15 @@
                 <app-buy-cds-cart 
                     [(cartPopUp)]="showCartPopUp"
                     [(soonToPurchase)]="myOrders"
-                    (changedCart)="cartUpdate($event)"
+                    [(totalCost)]="sumTotalCost"
+                    (changedCart)="changeOrder($event)"
                 ></app-buy-cds-cart>
             </section>
             <section>
                 <app-buy-cds-info
                     [(itemPopUp)] = "showItemPopUp"
                     [chosenItem] = "selectedItem"
-                    (addedOrder)="parentUpdate($event)"
+                    (addedOrder)="applyOrder($event)"
                 >
                 </app-buy-cds-info>
             </section>

@@ -13,6 +13,14 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   @Input() cartPopUp:boolean;
+  @Output() cartPopUpChange = new EventEmitter<boolean>();
+  @Input() checkOutPopUp: boolean = false;
+  @Output() checkOutPopUpChange = new EventEmitter<boolean>();
+
+  // @Input() salesTax: number;
+  @Input() totalCost: number;
+  // @Input() sumTotalCost: number;
+
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
   @ViewChild('contactForm') contactForm!: NgForm;
@@ -23,7 +31,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   // checkOutNow = false;
 
 
-  totalCost: number = 0;
+  // totalCost: number = 0;
   AllThingsCount: number = 1;
   BrightlyBeamsCount: number = 1;
   PurchaseCost: number = 2.99;
@@ -31,7 +39,6 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   newCart = [];
   taxPercentage: number = 0.07;
   shippingCost: number = 5;
-  showCheckOut: boolean = false;
 
   
   private color: string = '';
@@ -56,7 +63,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   goCheckOut(){
-    this.showCheckOut = true;
+    this.checkOutPopUp = true;
     console.log(this.soonToPurchase);
 
     this.fullOrder = "";//reset
@@ -176,8 +183,15 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
     this.soonToPurchase = this.newCart;
     
     this.changedCart.emit(this.soonToPurchase);
+  }
 
-
-
+  
+  closeCart(){
+    this.cartPopUp = false;
+    this.cartPopUpChange.emit(this.cartPopUp);
+  }
+  closeCheckOut(){
+    this.checkOutPopUp = false;
+    this.checkOutPopUpChange.emit(this.checkOutPopUp);
   }
 }

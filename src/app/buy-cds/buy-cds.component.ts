@@ -17,12 +17,16 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   
   // @Input() myMessage = "Where's my moneys?"
 
-  parentPackage1 = "Where's my money?"
-  parentPackage2 ="Pay up sonny!"
+  @Input() salesTax: number = 0;
+  shippingCost: number = 5;
+  @Input() totalCost: number = 0;
+  @Input() sumTotalCost: number = 0;
+  // @Input() grandTotalCost: number = 0;
 
   showItemPopUp = false;
   selectedItem = "";
   duplicate = false;
+  changedTotal = 0;
 
   showCartPopUp = false;
 
@@ -37,7 +41,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     this.showCartPopUp = true;
   }
 
-  parentUpdate(addedOrder: OrderInfo){
+  applyOrder(addedOrder: OrderInfo){
     if (addedOrder.orderQuantity != 0){
       if (this.myOrders.length != 0){
         this.myOrders.forEach(order => {
@@ -52,12 +56,42 @@ export class BuyCdsComponent implements OnInit, OnChanges {
       else{this.myOrders.push(addedOrder);}
     }
     console.log(addedOrder, this.myOrders);
+
+    // this.findSumTotal(this.myOrders);
+
+    // this.totalUpCosts(this.myOrders);
   }
 
-  cartUpdate(changedCart: OrderInfo[]){
+  findSumTotal(orders: OrderInfo[]){
+    orders.forEach(item => {
+      this.changedTotal = this.changedTotal + item.orderPrice;
+    });
+    this.changedTotal = Math.round((this.changedTotal*0.07)*100)/100;
+    
+    console.log(this.sumTotalCost, this.changedTotal);
+    if (this.sumTotalCost != this.changedTotal){
+      this.sumTotalCost = this.changedTotal;
+    }
+  }
+
+  // totalUpCosts(orders: OrderInfo[]){
+  //   orders.forEach(item => {
+  //     this.sumTotalCost = this.sumTotalCost + item.orderPrice;
+  //   });
+  //   console.log(this.changedTotalCost, this.sumTotalCost)
+  //   if (this.sumTotalCost != this.changedTotalCost){
+  //     this.salesTax = Math.round((this.sumTotalCost * 0.07)*100)/100;
+  //     this.grandTotalCost = this.sumTotalCost + this.salesTax + this.shippingCost;
+  //     this.changedTotalCost = this.sumTotalCost;
+  //   }
+  // }
+
+
+  changeOrder(changedCart: OrderInfo[]){
     console.log(changedCart);
     this.myOrders = changedCart;
   }
+
 
   ngOnInit(): void {
   }

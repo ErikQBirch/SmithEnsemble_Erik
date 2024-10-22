@@ -5,13 +5,14 @@
   > -->
   
 
-<ng-template
+<!-- <ng-template
   [ngIf]="cartPopUp">
-</ng-template>
+</ng-template> -->
 
 
 <section #popUp_cart> 
-  <div id="cart_display" class="layer3">
+  <div id="cart_display" class="layer3"
+    [ngStyle]="{'background-color':cartPopUp ? 'green' : 'red'}">
     <ul *ngFor="let item of soonToPurchase">
       <li>
         <span>{{item.orderName}} (${{item.orderPrice}}) </span> 
@@ -19,14 +20,19 @@
         <button (click)="removeItem(item)">Remove</button>
       </li>
     </ul>
-    <ng-template [ngIf]="showCheckOut">
-      <span>Tax = {{totalCost*taxPercentage}}</span>
-      <span>Shipping = {{shippingCost}}</span>
-    </ng-template>
+    <div>
+      <span>Tax = ${{totalCost*0.07}}</span>
+      <span>Shipping = ${{5}}</span>
+    </div>
+    <button (click)="closeCart()">Close Cart</button>
+    <!-- <ng-template [ngIf]="checkoutPopUp">
+    </ng-template> -->
     <button (click)="goCheckOut()">Check Out</button>
   </div>
-  <div id="cart_checkout" class="layer2">
+  <div id="cart_checkout" class="layer2"
+    [ngStyle]="{'background-color': checkOutPopUp ? 'blue':'orange'}">
     <div id="myPaypalButtons"></div>
+    <button (click)="closeCheckOut()">Close Check Out</button>
   </div>
   <div id="cart_email" class="layer1">
     <div class="mt-8">
