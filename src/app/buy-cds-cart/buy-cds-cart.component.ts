@@ -22,13 +22,17 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   // checkOutNow = false;
 
-  TotalCost = '$100'
-  totalCost: string = "You just spent $1.00! Yay!"
+
+  totalCost: number = 0;
   AllThingsCount: number = 1;
   BrightlyBeamsCount: number = 1;
   PurchaseCost: number = 2.99;
   fullOrder: string ='';
   newCart = [];
+  taxPercentage: number = 0.07;
+  shippingCost: number = 5;
+  showCheckOut: boolean = false;
+
   
   private color: string = '';
   showAlert: boolean = false;
@@ -52,15 +56,23 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   goCheckOut(){
+    this.showCheckOut = true;
     console.log(this.soonToPurchase);
 
     this.fullOrder = "";//reset
 
 
     this.soonToPurchase.forEach(item => {
-      console.log(item);
-      this.fullOrder = this.fullOrder + `${item.orderName}: ${item.orderQuantity}\n`
+      this.fullOrder = 
+        this.fullOrder + 
+        `${item.orderName} (Qty: ${item.orderQuantity})\n`
+      this.totalCost = this.totalCost + item.orderPrice;
     });
+
+    this.totalCost = this.totalCost + (this.totalCost * this.taxPercentage);
+    this.totalCost = this.totalCost + (this.shippingCost);
+
+    this.fullOrder = this.fullOrder + `Total = $${Math.round(this.totalCost*100)/100}`
 
 
     this.contactFormValues = {
@@ -109,7 +121,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
         currency:"USD",
         value:"1.00",
         onApprove:(details) => {
-          alert(this.totalCost);
+          // alert(this.totalCost);
           console.log(this.contactFormValues.name);
           this.submitEmail(this.contactForm)
         }

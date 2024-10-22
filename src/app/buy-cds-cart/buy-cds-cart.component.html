@@ -19,6 +19,10 @@
         <button (click)="removeItem(item)">Remove</button>
       </li>
     </ul>
+    <ng-template [ngIf]="showCheckOut">
+      <span>Tax = {{totalCost*taxPercentage}}</span>
+      <span>Shipping = {{shippingCost}}</span>
+    </ng-template>
     <button (click)="goCheckOut()">Check Out</button>
   </div>
   <div id="cart_checkout" class="layer2">

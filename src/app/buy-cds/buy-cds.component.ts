@@ -22,10 +22,11 @@ export class BuyCdsComponent implements OnInit, OnChanges {
 
   showItemPopUp = false;
   selectedItem = "";
+  duplicate = false;
 
   showCartPopUp = false;
 
-  @Input() myOrder = [];
+  @Input() myOrders = [];
 
   selectItem(itemName:string){
     this.showItemPopUp = true;
@@ -38,14 +39,24 @@ export class BuyCdsComponent implements OnInit, OnChanges {
 
   parentUpdate(addedOrder: OrderInfo){
     if (addedOrder.orderQuantity != 0){
-      this.myOrder.push(addedOrder);
+      if (this.myOrders.length != 0){
+        this.myOrders.forEach(order => {
+          if (order.orderName == addedOrder.orderName){
+            this.duplicate = true;
+            order.orderQuantity = order.orderQuantity+addedOrder.orderQuantity;
+          } 
+        });
+        if (this.duplicate == false){this.myOrders.push(addedOrder)}
+        this.duplicate = false;
+      }
+      else{this.myOrders.push(addedOrder);}
     }
-    console.log(addedOrder, this.myOrder);
+    console.log(addedOrder, this.myOrders);
   }
 
   cartUpdate(changedCart: OrderInfo[]){
     console.log(changedCart);
-    this.myOrder = changedCart;
+    this.myOrders = changedCart;
   }
 
   ngOnInit(): void {
