@@ -94,6 +94,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   changeOrder(changedCart: OrderInfo[]){
     console.log(changedCart);
     this.myOrders = changedCart;
+    this.additionalCosts(this.myOrders);
   }
 
 
