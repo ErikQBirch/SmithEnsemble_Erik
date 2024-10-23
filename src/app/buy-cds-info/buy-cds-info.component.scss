@@ -2,7 +2,7 @@
   #itemPopUp{
     #productImgs{
       div.imgHolder{
-        margin-top:2.5rem;
+        margin:2.5rem auto;
         display:flex;
         justify-content: space-evenly;
         figure{
@@ -28,7 +28,7 @@
       // background-color: red;
     }
     #closeBtn{
-      margin-top: 2.5rem;
+      margin: 2.5rem auto;
       
     }
   }

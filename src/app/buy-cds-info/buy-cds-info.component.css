@@ -1,6 +1,6 @@
 @media only all and (min-width: 0) {
   #itemPopUp #productImgs div.imgHolder {
-    margin-top: 2.5rem;
+    margin: 2.5rem auto;
     display: flex;
     justify-content: space-evenly;
   }
@@ -21,6 +21,6 @@
     width: fit-content;
   }
   #itemPopUp #closeBtn {
-    margin-top: 2.5rem;
+    margin: 2.5rem auto;
   }
 }/*# sourceMappingURL=buy-cds-info.component.css.map */
