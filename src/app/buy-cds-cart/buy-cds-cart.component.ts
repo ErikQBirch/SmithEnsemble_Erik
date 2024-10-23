@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Input, Output, OnChanges, EventEmitter, AfterViewInit, ViewChild, SimpleChanges } from '@angular/core';
+import { Component, OnInit, ElementRef, Input, Output, OnChanges, EventEmitter, AfterViewInit, ViewChild, SimpleChanges, Renderer2} from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
 import { MailService } from '../services/mail.service';
 import { NgForm } from '@angular/forms';
@@ -21,7 +21,6 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   // @Input() salesTax: number;
   @Input() customerOrder: allCosts;
-  // @Input() sumcustomerOrder: number;
 
   @ViewChild('popUp_cart') popUp_cart!: ElementRef;
   @ViewChild('myPaypalButtons') myPaypalButtons!: ElementRef;
@@ -32,8 +31,6 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   // checkOutNow = false;
 
-
-  // customerOrder: number = 0;
   AllThingsCount: number = 1;
   BrightlyBeamsCount: number = 1;
   PurchaseCost: number = 2.99;
@@ -41,6 +38,9 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   newCart = [];
   taxPercentage: number = 0.07;
   shippingCost: number = 5;
+  checkOutCount: number = 0;
+
+ 
 
   
   private color: string = '';
@@ -65,27 +65,50 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   goCheckOut(){
+    console.log(this.myPaypalButtons);
+
+
+    render(
+      {
+        id:"#myPaypalButtons",
+        currency:"USD",
+        value:this.customerOrder.grandTotal.toString(),
+        onApprove:(details) => {
+          
+          this.submitEmail(this.contactForm)
+        }
+      }
+    )
+    // if (this.checkOutCount == 0){
+    //   // render(
+    //   //   {
+    //   //     id:"#myPaypalButtons",
+    //   //     currency:"USD",
+    //   //     value:this.customerOrder.grandTotal.toString(),
+    //   //     onApprove:(details) => {
+            
+    //   //       this.submitEmail(this.contactForm)
+    //   //     }
+    //   //   }
+    //   // )
+    //   this.checkOutCount++;
+    // }
+
+
     this.checkOutPopUp = true;
-    console.log(this.soonToPurchase);
 
     this.fullOrder = "";//reset
-
 
     this.soonToPurchase.forEach(item => {
       this.fullOrder = 
         this.fullOrder + 
         `* ${item.orderName} (Qty: ${item.orderQuantity})\n`
-      // this.customerOrder = this.customerOrder + item.orderPrice;
     });
 
     this.fullOrder = this.fullOrder + `\nSum Total: $${this.customerOrder.sumTotal}\n`
     this.fullOrder = this.fullOrder + `Sales Tax: $${this.customerOrder.salesTax}\n`;
     this.fullOrder = this.fullOrder + `Shipping: $${this.customerOrder.shipping}\n`;
 
-    // this.customerOrder = this.customerOrder + (this.customerOrder * this.taxPercentage);
-    // this.customerOrder = this.customerOrder + (this.shippingCost);
-
-    console.log(this.customerOrder.grandTotal)
     this.fullOrder = this.fullOrder + `Total = $${this.customerOrder.grandTotal}`
 
 
@@ -97,6 +120,8 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   }
   
   async submitEmail(contactForm: NgForm) {
+    
+
     this.onSubmit = true;
     // -- set formData values
     let formData: FormData = new FormData();
@@ -126,34 +151,19 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
     this.onSubmit = false;
     this.showAlert = true;
     this.hideAlert();
+    this.closeCart();
   }
 
-  constructor(private mailService: MailService) { 
-    render(
-      {
-        id:"#myPaypalButtons",
-        currency:"USD",
-        value:"1.00",
-        onApprove:(details) => {
-          // alert(this.customerOrder);
-          console.log(this.contactFormValues.name);
-          this.submitEmail(this.contactForm)
-        }
-      }
-    )
-  } //
+  constructor(private mailService: MailService, private renderer: Renderer2) { 
+  } 
 
 
   ngAfterViewInit(): void{
 
     setTimeout(function(){
-      // console.log(this.myPaypalButtons);
+      // 
       if (!this.myPaypalButtons.innerHTML){
-        location.reload();
-      }
-      else{
-        // this.myPaypalButtons.style.display = "none";
-        // this.myPaypalButtons.style.opacity= "0";
+        // location.reload();
       }
     },100)
 ;
@@ -161,7 +171,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
 
-    console.log('CHANGES_IN_CART', changes);
+    
 
   }
 
@@ -173,9 +183,9 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
 
 
   removeItem(trashOrder){
-    console.log(this.soonToPurchase);
+    
     this.newCart = this.soonToPurchase.filter((item)=>{return (item !=trashOrder)})
-    console.log(this.newCart);
+    
 
     this.soonToPurchase = this.newCart;
     
@@ -194,5 +204,10 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
   closeCheckOut(){
     this.checkOutPopUp = false;
     this.checkOutPopUpChange.emit(this.checkOutPopUp);
+    
+    let childElements = this.myPaypalButtons.nativeElement.children;
+    for (let child of childElements){
+      this.renderer.removeChild(this.myPaypalButtons.nativeElement, child)
+    }
   }
 }

@@ -37,7 +37,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
 
   @Input() myOrders = [];
 
-  customerOrder = new allCosts();
+  customerOrder = new allCosts(0,0,0,0);
 
   selectItem(itemName:string){
     this.showItemPopUp = true;
@@ -69,7 +69,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
       }
       else{this.myOrders.push(addedOrder);}
     }
-    console.log(this.myOrders);
+    
 
     this.additionalCosts(this.myOrders)
   }
@@ -79,27 +79,32 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     orders.forEach(item => {
       this.changedTotal = this.changedTotal + (item.orderPrice * item.orderQuantity);
     });
-    console.log(this.sumTotal, this.changedTotal)
+    
     if(this.sumTotal != this.changedTotal){
       this.sumTotal = Math.round(this.changedTotal*100)/100;
       this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
       this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
     }
-    console.log(this.sumTotal, this.changedTotal, this.salesTax, this.grandTotalCost);
     
-    this.customerOrder = new allCosts(
-      this.sumTotal,
-      this.salesTax,
-      this.shippingCost,
-      this.grandTotalCost
-    )
+    
+    this.customerOrder.sumTotal = this.sumTotal;
+    this.customerOrder.salesTax = this.salesTax;
+    this.customerOrder.shipping = this.shippingCost;
+    this.customerOrder.grandTotal = this.grandTotalCost;
 
-    console.log(this.customerOrder)
+    // this.customerOrder = new allCosts(
+    //   this.sumTotal,
+    //   this.salesTax,
+    //   this.shippingCost,
+    //   this.grandTotalCost
+    // )
+
+    
   }
  
 
   changeOrder(changedCart: OrderInfo[]){
-    console.log(changedCart);
+    
     this.myOrders = changedCart;
     this.additionalCosts(this.myOrders);
   }
@@ -109,7 +114,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes, "CHANGES_IN_PARENT");
+    
 
   }
 

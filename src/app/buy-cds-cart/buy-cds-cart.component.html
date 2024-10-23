@@ -22,7 +22,7 @@
   </div>
   <div id="cart_checkout" class="layer2"
     [ngStyle]="{'z-index': checkOutPopUp ? '4':'2'}">
-    <div id="myPaypalButtons"></div>
+    <div id="myPaypalButtons" #myPaypalButtons></div>
     <button (click)="closeCheckOut()">Close Check Out</button>
   </div>
   <div id="cart_email" class="layer1">
@@ -125,15 +125,4 @@
     
     </div>
   </div>
-
-
-  
-  
-  
-  
-  
-  <!-- <p
-  [ngStyle]="{'background-color':'red'}"
-  >{{childBucket2}}</p> -->
-  
 </section>
