@@ -1,18 +1,5 @@
-<!-- <section
-[ngStyle]="{
-  'background-color':'yellow',
-  'display':'none'}"  
-  > -->
-  
-
-<!-- <ng-template
-  [ngIf]="cartPopUp">
-</ng-template> -->
-
-
 <section #popUp_cart> 
-  <div id="cart_display" class="layer3"
-    [ngStyle]="{'background-color':cartPopUp ? 'green' : 'red'}">
+  <div id="cart_display" class="layer3">
     <ul *ngFor="let item of soonToPurchase">
       <li>
         <span>{{item.orderName}} (${{item.orderPrice}}) </span> 

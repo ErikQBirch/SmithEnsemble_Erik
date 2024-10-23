@@ -47,6 +47,7 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
     this.addedOrder.emit(this.myOrder);
 
     this.productQuantity.nativeElement.value = 0;
+    this.closePopUp();
 
   }
 

@@ -44,8 +44,15 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     this.selectedItem = itemName;
   }
 
-  showCart(){
-    this.showCartPopUp = true;
+  // showCart(){
+  //   this.showCartPopUp = true;
+  // }
+  // closeCart(result: boolean){
+  //   this.showCartPopUp = result;
+  // }
+
+  toggleCartPopUp(result: boolean){
+    this.showCartPopUp = result;
   }
 
   applyOrder(addedOrder: OrderInfo){

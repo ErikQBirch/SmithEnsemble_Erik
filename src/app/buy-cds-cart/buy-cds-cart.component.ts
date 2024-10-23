@@ -156,17 +156,7 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
         // this.myPaypalButtons.style.opacity= "0";
       }
     },100)
-
-
-    // console.log(100)
-    // // this.popUp_cart.nativeElement.style = {'display': 'none'}
-    // if (!this.cartPopUp){
-    //   this.popUp_cart.nativeElement.style.display = "none";
-    // }
-    // else {
-    //   this.popUp_cart.nativeElement.style.display = "flex";
-    // }
-    // console.log(this.popUp_cart.nativeElement.style);
+;
   }
 
   ngOnChanges(changes: SimpleChanges): void {
