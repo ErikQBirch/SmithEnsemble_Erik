@@ -1,25 +1,27 @@
-<section #popUp_cart> 
+<section #popUp_cart id="popUp_cart"> 
   <div id="cart_display" class="layer3">
-    <ul *ngFor="let item of soonToPurchase">
-      <li>
+    <ul>
+      <li *ngFor="let item of soonToPurchase">
         <span>{{item.orderName}} (${{item.orderPrice}}) </span> 
         <span>Qty: {{item.orderQuantity}}</span>
         <button (click)="removeItem(item)">Remove</button>
       </li>
     </ul>
-    <div>
+    <div id="appliedCosts">
       <span>Sum Total = ${{customerOrder.sumTotal}}</span>
       <span>Tax = ${{customerOrder.salesTax}}</span>
       <span>Shipping = ${{customerOrder.shipping}}</span>
       <span>Grand Total = ${{customerOrder.grandTotal}}</span>
     </div>
-    <button (click)="closeCart()">Close Cart</button>
-    <!-- <ng-template [ngIf]="checkoutPopUp">
-    </ng-template> -->
-    <button (click)="goCheckOut()">Check Out</button>
+
+    <div id="buttons">
+      <button (click)="closeCart()">Close Cart</button>
+      <button (click)="goCheckOut()">Check Out</button>
+    </div>
+
   </div>
   <div id="cart_checkout" class="layer2"
-    [ngStyle]="{'background-color': checkOutPopUp ? 'blue':'orange'}">
+    [ngStyle]="{'z-index': checkOutPopUp ? '4':'2'}">
     <div id="myPaypalButtons"></div>
     <button (click)="closeCheckOut()">Close Check Out</button>
   </div>
@@ -106,19 +108,19 @@
           </p>
         </div>
         <!-- submit button -->
-        <button
+        <!-- <button
           [disabled]="contactForm.invalid || onSubmit"
           class="p-2 rounded-md font-bold uppercase text-white bg-light-color hover:bg-primary-color transition disabled:opacity-50 disabled:bg-light-color"
         >
-          <!-- <ng-container *ngIf="onSubmit === false; else submittingEmail">
+          <ng-container *ngIf="onSubmit === false; else submittingEmail">
             send
-          </ng-container> -->
+          </ng-container>
           <ng-template #submittingEmail>
             <div class="animate-spin">
               <i class="fa-solid fa-rotate-right"></i>
             </div>
           </ng-template>
-        </button>
+        </button> -->
       </form>
     
     </div>

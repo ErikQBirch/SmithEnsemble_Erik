@@ -1,29 +1,43 @@
 <ng-template
   [ngIf]="itemPopUp">
-    <section>
-      <div id="productImg" *productImg></div>
+    <section id="itemPopUp">
+      <div id="productImgs">
+          <div *ngIf="chosenItem == 'AllThings'" class="imgHolder">
+            <figure>
+              <img src="../../assets/images/SmithEnsemblePics/front.png" alt="AllThingsCover">
+            </figure>
+            <figure>
+              <img src="../../assets/images/SmithEnsemblePics/cd-vector(1).png" alt="AllThingsDisk">
+            </figure>
+          </div>
+          <div *ngIf="chosenItem == 'BrightlyBeams'" class="imgHolder">
+            <figure>
+              <img src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png" alt="BrightlyBeamsCover">
+            </figure>
+            <figure>
+              <img src="../../assets/images/SmithEnsemblePics/CDSmithSix(1).png" alt="BrightlyBeamsDisk">
+            </figure>
+        </div>
+      </div>
       <div id="productInfo">
-        <section >
-          <h1 
-            *ngIf="chosenItem == 'AllThings'"
-            id="productName">
-              The Smith Ensemble: All Things Come of Thee
-          </h1>
-          <h1
-            *ngIf="chosenItem == 'BrightlyBeams'"
-            id="productName">
-              The Smith Six: Brightly Beams
-          </h1>
-          <ol>
-            <li *ngFor="let song of AlbumSongs.AllThings_songs">{{song}}</li>
-          </ol>
-        </section>
+        <h1 
+          *ngIf="chosenItem == 'AllThings'"
+          id="productName">
+            The Smith Ensemble: All Things Come of Thee
+        </h1>
+        <h1
+          *ngIf="chosenItem == 'BrightlyBeams'"
+          id="productName">
+            The Smith Six: Brightly Beams
+        </h1>
+        <ol>
+          <li *ngFor="let song of AlbumSongs.AllThings_songs">{{song}}</li>
+        </ol>
         <div id="productInputs">
-          <!-- <input type="number" id="productQuantity" min="0" name="productQuantity" *productQuantity/> -->
-          <input type="number" min="0"  #productQuantity value="0"/>
+          <input type="number" min="0"  #productQuantity value="" placeholder="Quantity" autofocus/>
           <button (click)="addToCart()">Add to Cart</button>
         </div>
       </div>
-      <button (click)="closePopUp();">X</button>
+      <button id="closeBtn" (click)="closePopUp();">X</button>
     </section>
 </ng-template>

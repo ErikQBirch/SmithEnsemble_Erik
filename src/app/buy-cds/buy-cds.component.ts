@@ -81,7 +81,7 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     });
     console.log(this.sumTotal, this.changedTotal)
     if(this.sumTotal != this.changedTotal){
-      this.sumTotal = this.changedTotal;
+      this.sumTotal = Math.round(this.changedTotal*100)/100;
       this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
       this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
     }

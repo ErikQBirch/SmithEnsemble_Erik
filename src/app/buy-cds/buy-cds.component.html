@@ -20,11 +20,11 @@
                             <h2>The Smith Six: Brightly Beams</h2>
                             <!-- <input type="number" id="BrightlyBeams" *BrightlyBeams placeholder="0" hidden> -->
                     </article>
-                    <ng-template
-                        [ngIf]="myOrders.length != 0">
-                        <button (click)="toggleCartPopUp(true)">Show Cart</button>
-                    </ng-template>
                 </div>
+                <ng-template
+                    [ngIf]="myOrders.length != 0">
+                    <button (click)="toggleCartPopUp(true)">Show Cart</button>
+                </ng-template>
             </section>
             <section class="cart_section"
                 [ngStyle]="{'z-index':showCartPopUp ? '4' : '1'}">
