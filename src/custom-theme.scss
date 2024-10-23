@@ -25,4 +25,3 @@ $my-first-app-theme: mat-light-theme($my-first-app-primary, $my-first-app-accent
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($my-first-app-theme);
-

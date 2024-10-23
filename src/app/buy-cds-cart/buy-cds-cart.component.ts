@@ -180,6 +180,10 @@ export class BuyCdsCartComponent implements OnInit, AfterViewInit, OnChanges {
     this.soonToPurchase = this.newCart;
     
     this.changedCart.emit(this.soonToPurchase);
+
+    if (this.soonToPurchase.length == 0){
+      this.closeCart();
+    }
   }
 
   

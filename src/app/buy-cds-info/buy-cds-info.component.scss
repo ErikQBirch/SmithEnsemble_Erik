@@ -4,8 +4,9 @@
       div.imgHolder{
         margin:2.5rem auto;
         display:flex;
-        justify-content: space-evenly;
+        justify-content: center;
         figure{
+          margin: 0 1rem;
           width: 150px;
           img{
             width:100%;
@@ -25,6 +26,10 @@
           width: fit-content;
         }
       }
+      #productInputs{
+        input{}
+        button{}
+      }
       // background-color: red;
     }
     #closeBtn{
@@ -34,5 +39,42 @@
   }
 }
 @media only all and (min-width: 760px) {}
-@media only all and (min-width: 992px) {}
+@media only all and (min-width: 992px) {
+  #itemPopUp{
+    #productImgs{
+      div.imgHolder{
+        figure{
+          width: 300px;
+          margin: 0 3rem;
+          img{
+          }
+        }
+      }
+    }
+    #productInfo{
+      h1{
+      }
+      ol{
+        li{
+          font-size:18px;
+        }
+      }
+      #productInputs{
+        font-size: 24px;
+        margin: 2.5rem auto;
+        input{
+          padding: 1rem 0 1rem 1rem;
+        }
+        button{
+          padding: 1rem;
+        }
+      }
+    }
+    #closeBtn{
+      font-size: 24px;
+      padding: 1rem 1.85rem;
+      margin: 5rem;
+    }
+  }
+}
 @media only all and (min-width: 1200px) {}

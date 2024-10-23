@@ -1,5 +1,5 @@
 @mixin standardPopUpFormat{
-  // min-height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position:absolute;
   top:0;
@@ -45,14 +45,24 @@
     }
     #buttons{
       display:flex;
-      justify-content: space-evenly;
-      width: 50vw;
+      justify-content: center;
+      width: 100%;
       margin: 0 auto;
+      button{
+        margin: 0 1rem;
+      }
     }
   }
   .layer2{
     @include standardPopUpFormat();
     z-index: 2;
+    margin: 2.5rem auto;
+    #myPaypalButtons{
+      // width: 50vw;
+      width: 100%;
+      margin: 0 auto;
+    }
+    button{}
     // display:none;
   }
   .layer1{
@@ -61,8 +71,65 @@
     // display:none;
   }
 }
-@media only all and (min-width: 760px) {}
-@media only all and (min-width: 992px) {}
+@media only all and (min-width: 760px) {
+  #popUp_cart{
+  }
+  .layer3{
+    ul{
+      li{
+        span{}
+        button{
+        }
+      }
+    }
+    div#appliedCosts{
+    }
+    #buttons{
+      button{}
+    }
+  }
+  .layer2{
+  }
+  .layer1{
+  }
+}
+@media only all and (min-width: 992px) {
+  #popUp_cart{
+  }
+  .layer3{
+    ul{
+      font-size:20px;
+      li{
+        span{}
+        button{
+        }
+      }
+    }
+    div#appliedCosts{
+      font-size:20px;
+    }
+    #buttons{
+      font-size:20px;
+      button{}
+    }
+  }
+  .layer2{
+    #myPaypalButtons{
+      width: 50% !important;
+      margin: 0 auto;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    button{
+      font-size:20px;
+      padding: 1rem;
+    }
+  }
+  .layer1{
+  }
+}
 @media only all and (min-width: 1200px) {}
 
 
