@@ -1,5 +1,4 @@
-import { Component, ElementRef, OnInit, Input, Output, EventEmitter, AfterViewChecked, AfterViewInit, OnChanges, SimpleChanges, ViewChild } from '@angular/core';
-// import { EventEmitter } from 'protractor';
+import { Component, ElementRef, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { OrderInfo } from './orderInfo';
 import { AlbumSongs } from '../buy-cds/album-songs';
 
@@ -8,22 +7,22 @@ import { AlbumSongs } from '../buy-cds/album-songs';
   templateUrl: './buy-cds-info.component.html',
   styleUrls: ['./buy-cds-info.component.css']
 })
-export class BuyCdsInfoComponent implements OnInit, OnChanges{
+export class BuyCdsInfoComponent implements OnInit{
   @Input() itemPopUp:boolean;
-  @Output() itemPopUpChange = new EventEmitter<boolean>();
   @Input() chosenItem:string = "";
-  productName: string = ""
-  productPrice: number = 0;
-  @ViewChild('productQuantity') productQuantity!: ElementRef;
+  
+  @Output() itemPopUpChange = new EventEmitter<boolean>();
   @Output() addedOrder = new EventEmitter<OrderInfo>();
-
-
+  
+  @ViewChild('productQuantity') productQuantity!: ElementRef;
+  
+  constructor() { }
 
   AlbumSongs = new AlbumSongs();
   myOrder = new OrderInfo();
   orderID = 0;
-
-  constructor() { }
+  productName: string = ""
+  productPrice: number = 0;
 
 
   addToCart(){
@@ -44,8 +43,8 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
       Number(this.productQuantity.nativeElement.value),
       Number(this.productPrice)
     )
-    this.addedOrder.emit(this.myOrder);
 
+    this.addedOrder.emit(this.myOrder);
     this.productQuantity.nativeElement.value = 0;
     this.closePopUp();
 
@@ -55,13 +54,6 @@ export class BuyCdsInfoComponent implements OnInit, OnChanges{
     this.itemPopUp = false;
     this.itemPopUpChange.emit(this.itemPopUp);
   }
-
-
-
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('CHANGES_IN_INFO', changes);
-  }
-
 
   ngOnInit(): void {  
   }

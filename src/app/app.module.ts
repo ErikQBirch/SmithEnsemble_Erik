@@ -32,6 +32,7 @@ import { IconsSmithsixComponent } from './icons-smithsix/icons-smithsix.componen
 import { BuyCdsComponent } from './buy-cds/buy-cds.component';
 import { BuyCdsInfoComponent } from './buy-cds-info/buy-cds-info.component';
 import { BuyCdsCartComponent } from './buy-cds-cart/buy-cds-cart.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 // import { NgxPayPalModule } from 'ngx-paypal';
 
@@ -43,8 +44,7 @@ const appRoutes: Routes = [
   { path: 'smithsix', component: SmithsixComponent },
   { path: 'buy-cds', component:BuyCdsComponent},
   { path: 'videos', component: VideosComponent },
-  { path: 'contact', component:  ContactComponent},
-  { path: 'about', component: AboutComponent }
+  { path: 'contact-us', component: ContactUsComponent}
 ];
 
 @NgModule({
@@ -65,6 +65,7 @@ const appRoutes: Routes = [
     BuyCdsComponent,
     BuyCdsInfoComponent,
     BuyCdsCartComponent,
+    ContactUsComponent,
 
  
   

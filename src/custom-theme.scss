@@ -25,3 +25,9 @@ $my-first-app-theme: mat-light-theme($my-first-app-primary, $my-first-app-accent
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($my-first-app-theme);
+
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+}

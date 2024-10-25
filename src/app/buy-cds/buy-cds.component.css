@@ -35,6 +35,7 @@
   }
   .sales-floor div .purchase-item figure {
     width: 100%;
+    cursor: pointer;
   }
   .sales-floor div .purchase-item figure img {
     width: 100%;

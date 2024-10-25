@@ -1,10 +1,4 @@
-import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { render } from 'creditcardpayments/creditCardPayments';
-import { MailService } from '../services/mail.service';
-import { NgForm } from '@angular/forms';
-import { NgModel } from '@angular/forms';
-import { NgModelGroup } from '@angular/forms';
-
+import { Component, Input, OnInit } from '@angular/core';
 import { OrderInfo } from '../buy-cds-info/orderInfo';
 import { allCosts } from '../buy-cds-cart/allCosts';
 
@@ -13,46 +7,40 @@ import { allCosts } from '../buy-cds-cart/allCosts';
   templateUrl: './buy-cds.component.html',
   styleUrls: ['./buy-cds.component.css'],
 })
-export class BuyCdsComponent implements OnInit, OnChanges {
-  
-  // @Input() myMessage = "Where's my moneys?"
-
+export class BuyCdsComponent implements OnInit {
   @Input() salesTax: number = 0;
-  shippingCost: number = 5;
   @Input() totalCost: number = 0;
   @Input() grandTotalCost: number = 0;
-
-  // @Input() sumTotalCost: number = 0;
-
-
-  sumTotal = 0;
-  changedTotal = 0;
-
-
-  showItemPopUp = false;
-  selectedItem = "";
-  duplicate = false;
-
-  showCartPopUp = false;
-
   @Input() myOrders = [];
-
+  
+  
+  
+  changedTotal = 0;
   customerOrder = new allCosts(0,0,0,0);
+  duplicate = false;
+  selectedItem = "";
+  shippingCost: number = 5;
+  showCartPopUp = false;
+  showItemPopUp = false;
+  sumTotal = 0;
 
-  selectItem(itemName:string){
-    this.showItemPopUp = true;
-    this.selectedItem = itemName;
-  }
+  additionalCosts(orders: OrderInfo[]){
+    this.changedTotal = 0; //RESET
 
-  // showCart(){
-  //   this.showCartPopUp = true;
-  // }
-  // closeCart(result: boolean){
-  //   this.showCartPopUp = result;
-  // }
-
-  toggleCartPopUp(result: boolean){
-    this.showCartPopUp = result;
+    orders.forEach(item => {
+      this.changedTotal = this.changedTotal + (item.orderPrice * item.orderQuantity);
+    });
+    
+    if(this.sumTotal != this.changedTotal){
+      this.sumTotal = Math.round(this.changedTotal*100)/100;
+      this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
+      this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
+    }
+    
+    this.customerOrder.sumTotal = this.sumTotal;
+    this.customerOrder.salesTax = this.salesTax;
+    this.customerOrder.shipping = this.shippingCost;
+    this.customerOrder.grandTotal = this.grandTotalCost;    
   }
 
   applyOrder(addedOrder: OrderInfo){
@@ -74,49 +62,20 @@ export class BuyCdsComponent implements OnInit, OnChanges {
     this.additionalCosts(this.myOrders)
   }
 
-  additionalCosts(orders: OrderInfo[]){
-    this.changedTotal = 0;
-    orders.forEach(item => {
-      this.changedTotal = this.changedTotal + (item.orderPrice * item.orderQuantity);
-    });
-    
-    if(this.sumTotal != this.changedTotal){
-      this.sumTotal = Math.round(this.changedTotal*100)/100;
-      this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
-      this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
-    }
-    
-    
-    this.customerOrder.sumTotal = this.sumTotal;
-    this.customerOrder.salesTax = this.salesTax;
-    this.customerOrder.shipping = this.shippingCost;
-    this.customerOrder.grandTotal = this.grandTotalCost;
-
-    // this.customerOrder = new allCosts(
-    //   this.sumTotal,
-    //   this.salesTax,
-    //   this.shippingCost,
-    //   this.grandTotalCost
-    // )
-
-    
-  }
- 
-
-  changeOrder(changedCart: OrderInfo[]){
-    
+  changeOrder(changedCart: OrderInfo[]){ 
     this.myOrders = changedCart;
     this.additionalCosts(this.myOrders);
   }
+  selectItem(itemName:string){
+    this.showItemPopUp = true;
+    this.selectedItem = itemName;
+  }
 
+  toggleCartPopUp(result: boolean){
+    this.showCartPopUp = result;
+  }
 
   ngOnInit(): void {
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    
-
-  }
-
 }
 

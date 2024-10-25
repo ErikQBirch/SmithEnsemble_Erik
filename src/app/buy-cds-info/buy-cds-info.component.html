@@ -20,16 +20,18 @@
         </div>
       </div>
       <div id="productInfo">
-        <h1 
-          *ngIf="chosenItem == 'AllThings'"
-          id="productName">
-            The Smith Ensemble: All Things Come of Thee
-        </h1>
-        <h1
-          *ngIf="chosenItem == 'BrightlyBeams'"
-          id="productName">
-            The Smith Six: Brightly Beams
-        </h1>
+        <div *ngIf="chosenItem == 'AllThings'">
+          <h1 id="productName">
+              The Smith Ensemble: All Things Come of Thee
+          </h1>
+          <h3>$2.98</h3>
+        </div>
+        <div *ngIf="chosenItem == 'BrightlyBeams'"> 
+          <h1 id="productName">
+              The Smith Six: Brightly Beams
+          </h1>
+          <h3>$3.99</h3>
+        </div>
         <ol>
           <li *ngFor="let song of AlbumSongs.AllThings_songs">{{song}}</li>
         </ol>

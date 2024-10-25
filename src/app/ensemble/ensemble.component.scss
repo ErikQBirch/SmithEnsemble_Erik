@@ -3,85 +3,118 @@
 
 @import "../universal.scss";
 
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+   } 
+} 
 
+@keyframes fadeOutAnimation {
+  0% { 
+    opacity: 1; 
+} 
+  100% { 
+    opacity: 0; 
+ } 
+}
 
 
 @media only all and (min-width: 0) {
-  .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
+  @include universal_mobile;
+  #videoHolder{
+    position:relative;
+    overflow:hidden;
+    cursor: pointer;
+    .center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      position:absolute;
+      top: 0;
+  
+      animation:fadeInAnimation ease 1.5s;
+      animation-iteration-count: 1; 
+      animation-fill-mode: forwards;
+    }
+    video{
+    }
+    .fadeOut_scss{
+      animation:fadeOutAnimation ease 1.5s;
+      animation-iteration-count: 1; 
+      animation-fill-mode: forwards;
+    }
 
-    animation:fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1; 
-    animation-fill-mode: forwards;
+  }
+  .scripture-quote{
+    margin: 2em auto;
+    padding: 0.01em 2em 1em 2em;
+    font-size: 16px;
   }
 
-.scripture-quote{
-  margin: 2em auto;
-  padding: 0.01em 2em 1em 2em;
-  font-size: 2.5rem;
-}
-
-  @keyframes fadeInAnimation { 
-    0% { 
-        opacity: 0; 
-    } 
-    100% { 
-        opacity: 1; 
-     } 
-} 
-
-.album-cover{
-  position:relative;
-
- 
-  width:60%;
-  max-width: 500px;
-
-  left: 5px;
-  z-index: 1;
+  .album-cover{
+    position:relative;
 
   
-}
+    width:60%;
+    max-width: 500px;
 
-.cd-album-cover{
-  position: absolute;
+    left: 5px;
+    z-index: 1;
+    margin: 2.5rem 0;
 
-  width:50%;
-  max-width: 450px;
+    
+  }
 
-  border-radius: 1px;
-  transition: 2s;
-}
-.my-container:hover  .cd-album-cover{
-  transform: translateX(60%);
-}
+  .cd-album-cover{
+    position: absolute;
 
-img{
-  padding: 2em;
-}
+    width:50%;
+    max-width: 450px;
 
-.buy-cd{
-padding-left: 2em;
-padding-right: 2em;
+    border-radius: 1px;
+    transition: 2s;
+    margin: 2.5rem 0;
+  }
+  .my-container:hover  .cd-album-cover{
+    transform: translateX(60%);
+  }
 
-font-size: 1.2em;
-}
 
-.btn{
-  margin-bottom: 3em;
-}
+  .buy-cd{
+  padding-left: 2em;
+  padding-right: 2em;
 
-@include universal_mobile;
+  font-size: 1.2em;
+  }
+
+  .btn{
+    margin-bottom: 3em;
+  }
+
+
 
 }
 @media only all and (min-width: 760px) {}
 @media only all and (min-width: 992px) {
   @include universal_med;
+  .scripture-quote{
+    font-size: 25px;
+  }
+  p {
+    font-size: 18px;
+  }
 }
 @media only all and (min-width: 1200px) {}
 @media only all and (min-width: 1600px) {
   @include universal_mega;
+  .scripture-quote{
+    font-size: 40px;
+  }
+  p{
+    font-size: 25px;
+  }
 }

@@ -2316,4 +2316,9 @@ th.mat-header-cell, td.mat-cell, td.mat-footer-cell {
 
 .mat-simple-snackbar-action {
   color: #ff4081;
+}
+
+.mat-drawer-backdrop.mat-drawer-shown {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
 }/*# sourceMappingURL=custom-theme.css.map */

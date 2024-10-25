@@ -8,12 +8,16 @@
     padding-bottom: 2em;
     margin-bottom:em;
     margin-top:4em;
+    position:relative;
   } 
+.mat-drawer-backdrop.mat-drawer-shown{
+  height: 100vh;
+  }
 } 
 @mixin universal_min{} //760px
 @mixin universal_med{
   .container{
-    width: 90vw;
+    width: 80vw;
   }
 } //990px
 @mixin universal_max{} //1200px
