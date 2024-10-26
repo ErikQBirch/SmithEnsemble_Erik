@@ -111,7 +111,21 @@
     max-width: 500px;
   }
   
+
+  .scripture-quote{
+    margin: 2em auto;
+    padding: 0.01em 2em 1em 2em;
+    font-size: 16px;
+    h2{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bolder;
+    }
+  }
   
+  h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+  }
   
   /* /* Container holding the image and the text */
 
@@ -121,6 +135,9 @@
 @media only all and (min-width: 760px) {}
 @media only all and (min-width: 992px) {
   @include universal_med;
+  .scripture-quote{
+    font-size: 20px;
+  }
   figure{
     width: 50vw;
   }
@@ -130,6 +147,13 @@
 }
 @media only all and (min-width: 1200px) {}
 @media only all and (min-width: 1600px) {
+  .scripture-quote{
+    font-size: 30px;
+    h2{
+      font-size: 50px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+  }
   p{
     font-size: 25px;
   }

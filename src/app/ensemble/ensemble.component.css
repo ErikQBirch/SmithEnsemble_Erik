@@ -26,6 +26,9 @@
     margin-top: 4em;
     position: relative;
   }
+  .mat-drawer-backdrop.mat-drawer-shown {
+    height: 100vh;
+  }
   #videoHolder {
     position: relative;
     overflow: hidden;
@@ -51,6 +54,10 @@
     margin: 2em auto;
     padding: 0.01em 2em 1em 2em;
     font-size: 16px;
+  }
+  .scripture-quote h2 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bolder;
   }
   .album-cover {
     position: relative;
@@ -79,13 +86,17 @@
   .btn {
     margin-bottom: 3em;
   }
+  h3 {
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bolder;
+  }
 }
 @media only all and (min-width: 992px) {
   .container {
     width: 80vw;
   }
   .scripture-quote {
-    font-size: 25px;
+    font-size: 20px;
   }
   p {
     font-size: 18px;
@@ -93,7 +104,11 @@
 }
 @media only all and (min-width: 1600px) {
   .scripture-quote {
-    font-size: 40px;
+    font-size: 30px;
+  }
+  .scripture-quote h2 {
+    font-size: 50px;
+    font-family: "Times New Roman", Times, serif;
   }
   p {
     font-size: 25px;
