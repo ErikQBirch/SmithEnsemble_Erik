@@ -16,9 +16,3 @@ https://www.youtube.com/watch?v=-HeadgoqJ7A
 https://www.youtube.com/watch?v=jJVoTZtEAgk
 https://www.youtube.com/watch?v=d-X18VdLfCA
 https://developer.paypal.com/dashboard/accounts/edit/4815630535392496472?accountName=sb-nh2f129615986@personal.example.com
-
-4032034723635150 FakeCard Number
-02/29 Fake Expiry
-456 Fake CVC code
-
-sb-kfw4f29124630@business.example.com
