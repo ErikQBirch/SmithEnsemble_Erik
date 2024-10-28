@@ -33,6 +33,8 @@ import { BuyCdsComponent } from './buy-cds/buy-cds.component';
 import { BuyCdsInfoComponent } from './buy-cds-info/buy-cds-info.component';
 import { BuyCdsCartComponent } from './buy-cds-cart/buy-cds-cart.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ComingSoonComponent } from './coming-soon/coming-soon.component';
+import { WoodSmithComponent } from './wood-smith/wood-smith.component';
 
 // import { NgxPayPalModule } from 'ngx-paypal';
 
@@ -42,9 +44,11 @@ const appRoutes: Routes = [
   { path: '', component: EnsembleComponent },
   { path: 'ensemble', component: EnsembleComponent },
   { path: 'smithsix', component: SmithsixComponent },
+  { path: 'wood-smith', component: WoodSmithComponent},
   { path: 'buy-cds', component:BuyCdsComponent},
   { path: 'videos', component: VideosComponent },
-  { path: 'contact-us', component: ContactUsComponent}
+  { path: 'contact-us', component: ContactUsComponent},
+  { path: 'coming-soon', component: ComingSoonComponent},
 ];
 
 @NgModule({
@@ -66,6 +70,8 @@ const appRoutes: Routes = [
     BuyCdsInfoComponent,
     BuyCdsCartComponent,
     ContactUsComponent,
+    ComingSoonComponent,
+    WoodSmithComponent,
 
  
   

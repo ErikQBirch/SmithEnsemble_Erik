@@ -60,5 +60,12 @@ mat-toolbar a {
 
 }
 
+a:link, a:visited, a:hover, a:active, a:focus{
+      color:black;
+      font-style: none;
+      font-size: 16px;
+      font-weight:normal;
+}
+
 
 .mat-drawer-container{ overflow: visible; }

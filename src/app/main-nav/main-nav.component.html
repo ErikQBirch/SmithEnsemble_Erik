@@ -10,20 +10,21 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item routerLink="/"  (click)="drawer.toggle()">Home</a>
-      <a mat-list-item routerLink="/smithsix"  (click)="drawer.toggle()">The Smith Six</a>
-      <a mat-list-item routerLink="/videos"    (click)="drawer.toggle()">Videos</a>
-      <!-- <a><button mat-button [matMenuTriggerFor]="menu">Music</button></a>
-
+      <!-- <a mat-list-item routerLink="/smithsix"  (click)="drawer.toggle()">The Smith Six</a> -->
       <mat-menu #menu="matMenu">
-
-
-        <button mat-menu-item [matMenuTriggerFor]="smithensemble" >The Smith Ensemble</button>
-        <button mat-menu-item [matMenuTriggerFor]="smithsix" >The Smith Six</button>
-     
-        
+        <!-- <button mat-menu-item [matMenuTriggerFor]="smithsix" > -->
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/smithsix"  (click)="drawer.toggle()">The Smith Six</a>
+        </button>
+        <!-- <button mat-menu-item [matMenuTriggerFor]="smithensemble" > -->
+        <button mat-menu-item>
+          <a mat-list-item routerLink="/coming-soon" (click)="drawer.toggle()">Wood Smith</a>
+        </button>        
       </mat-menu>
+      <a mat-list-item routerLink="/videos"    (click)="drawer.toggle()">Videos</a>
+      <a><button mat-button [matMenuTriggerFor]="menu" [ngStyle]="{'font-size':'16px','font-weight':'normal'}">Branches</button></a>
 
-      <mat-menu #smithensemble="matMenu">
+      <!-- <mat-menu #smithensemble="matMenu">
         <app-smithensemblelinks></app-smithensemblelinks>
         </mat-menu>
 
@@ -32,7 +33,7 @@
          </mat-menu> -->
 
       <!-- <a mat-list-item routerLink="/contact" >Contact Us</a> -->
-      <a mat-list-item routerLink="/buy-cds"    (click)="drawer.toggle()">Buy-CDs</a>
+      <a mat-list-item routerLink="/coming-soon"    (click)="drawer.toggle()">Buy-CDs</a>
       <a mat-list-item routerLink="/contact-us"    (click)="drawer.toggle()">Contact Us</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -59,8 +60,22 @@
       <div 
       *ngIf="!(isHandset$ | async)">        
       <a  routerLink="/">Home</a>
-      <a  routerLink="/smithsix">The Smith Six</a>
+      <!-- <a  routerLink="/smithsix">The Smith Six</a> -->
+      <button mat-button [matMenuTriggerFor]="menu" [ngStyle]="{'font-size':'16px','font-weight':'normal'}">Branches</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          
+          <a  routerLink="/smithsix">The Smith Six</a>
+        </button>
+        <button mat-menu-item>
+          <a  routerLink="/coming-soon">Wood Smith</a>
+        </button>
+      </mat-menu>
       <a routerLink="/videos" >Videos</a>
+
+
+      
+
       <!-- <button mat-button [matMenuTriggerFor]="menu">Music</button>
       <mat-menu #menu="matMenu">
 
@@ -79,8 +94,10 @@
       <mat-menu #smithsix="matMenu">
         <app-smithsixlinks></app-smithsixlinks>
           </mat-menu> -->
-          <a routerLink="/buy-cds" >Buy CDs</a> 
-          <a routerLink="/contact-us" >Contact Us</a> 
+
+
+      <a routerLink="/coming-soon" >Buy CDs</a> 
+      <a routerLink="/contact-us" >Contact Us</a> 
      </div>
 
     </mat-toolbar>
