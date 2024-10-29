@@ -6,11 +6,20 @@
         <div class="col-md" id="videoHolder" #videoHolder (click)="fadeOut()">
             <img class="center" src="../assets/images/SmithEnsemblePics/SmithEnsembleTitle.png"
                 [ngClass]="fadeOut_bool == true ? 'fadeOut_scss' : ''">
-             <video id="video" width="100%" autoplay [muted]="'muted'" [loop]="'loop'">
+                <video id="video" width="100%" autoplay [muted]="'muted'" [loop]="'loop'" [controlsList]="'nodownload'">
                 <source src="../../assets/SampleVideo.mp4" type="video/mp4">
              </video>
         </div>
     </div>
+    
+    <!-- <div class="row">
+        <div class="col-md">
+            <figure>
+                <img class="center" src="../assets/images/SmithEnsemblePics/HomePage.jpg">
+            </figure>
+        </div>
+    </div> -->
+
     <div class="row">
         <div class="col-md">
 

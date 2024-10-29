@@ -60,6 +60,12 @@
     font-family: "Times New Roman", Times, serif;
     font-weight: bolder;
   }
+  figure {
+    width: 100%;
+  }
+  figure img {
+    width: 100%;
+  }
   .album-cover {
     position: relative;
     width: 60%;

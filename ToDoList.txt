@@ -1,14 +1,5 @@
-1. Create Display of Products/cds with add-to-cart buttons
-2. Create Pop-up for product details
-3. Create Pop-up for shopping-cart (where the paypal stuff will be visible)
-4. Create form for entering info to be emailed to seller
+1. Home page => Turn video into picture and click to start a video
+2. Add to email list (maybe)
 
-
-
-
-About Us: => change into Contact Us (with email)
-Front Page: have sample video with sample audio
-Secure Website
-Videos: add bye bye blues and be my little bumblee
-Buy CDs: change into Shop
-Simplify Nav Bar (and mobile);
+Patricia Smith 14:07
+AVL5UVlXC_T_Cb4NtvOWd4H1kc76zzrNSm2pdKZsj5-0QhnKC5wjso66DpFlqETtFhAa-tT3MavLv6yK

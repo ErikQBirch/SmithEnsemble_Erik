@@ -33,9 +33,9 @@ export class BuyCdsCartComponent implements OnInit {
   checkOutCount: number = 0;
   fullOrder: string ='';
   newCart = [];
-  PurchaseCost: number = 2.99;
+  PurchaseCost: number = 0.00;
   taxPercentage: number = 0.07;
-  shippingCost: number = 5;
+  shippingCost: number = 0.5;
 
 
   
@@ -86,11 +86,11 @@ export class BuyCdsCartComponent implements OnInit {
     this.fullOrder = this.fullOrder + `Sales Tax: $${this.customerOrder.salesTax}\n`;
     this.fullOrder = this.fullOrder + `Shipping: $${this.customerOrder.shipping}\n`;
     this.fullOrder = this.fullOrder + `Total = $${this.customerOrder.grandTotal}\n\n`
-    this.fullOrder = this.fullOrder + "Refer to your PayPal and compare prices/purchase times in order to determine the identity and mailing address of the customer"
+    this.fullOrder = this.fullOrder + "Refer to your PayPal and compare prices/purchase times in order to determine the identity and mailing address of the customer \n\nhttps://www.sandbox.paypal.com/us/home\nOR\nwww.paypal.com/us/webapps/mpp/account-selection"
 
     this.contactFormValues = {
-      name: 'Erik Q. Birch',
-      email: 'erikqbirch@gmail.com',
+      name: 'Patricia Smith',
+      email: 'thesmithensemble@gmail.com',
       body: this.fullOrder
     };
   }
@@ -105,7 +105,7 @@ export class BuyCdsCartComponent implements OnInit {
     formData.append('email', this.contactFormValues.email);
     formData.append('body', this.contactFormValues.body);
     // -- email customization
-    formData.append('access_key', "9eb85861-2991-4d54-b6b3-95d5c56c6ba0");
+    formData.append('access_key', "f001b29e-df74-456f-86bb-9f4c9f3c5c04");
     formData.append('subject', 'Email Support From Your Site');
     formData.append('from_name', 'Contact Notification');
   

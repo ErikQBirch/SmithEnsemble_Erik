@@ -29,11 +29,11 @@ export class BuyCdsInfoComponent implements OnInit{
     switch (this.chosenItem){
       case "AllThings":
         this.productName = 'The Smith Ensemble: All Things Come of Thee';
-        this.productPrice = 2.98;
+        this.productPrice = 0.15;
         break;
       case "BrightlyBeams":
         this.productName = 'The Smith Six: Brightly Beams';
-        this.productPrice = 3.99;
+        this.productPrice = 0.25;
         break;
     }
 
