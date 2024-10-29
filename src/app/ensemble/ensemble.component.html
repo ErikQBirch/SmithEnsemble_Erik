@@ -3,7 +3,7 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-md" id="videoHolder" #videoHolder (click)="fadeOut()">
+        <div class="col-md" id="videoHolder" #videoHolder (click)="showVideo()">
             <img class="center" src="../assets/images/SmithEnsemblePics/SmithEnsembleTitle.png"
                 [ngClass]="fadeOut_bool == true ? 'fadeOut_scss' : ''">
                 <video id="video" width="100%" autoplay [muted]="'muted'" [loop]="'loop'" [controlsList]="'nodownload'">
@@ -11,6 +11,8 @@
              </video>
         </div>
     </div>
+
+
     
     <!-- <div class="row">
         <div class="col-md">
@@ -35,7 +37,7 @@
                 <!-- <a href="https://www.heirloomartco.com/products/the-smith-ensemble-all-things-come-of-thee?_pos=1&_sid=2085e6cd3&_ss=r"> -->
                     <a routerLink="/buy-cds" >
                     <!-- <a [routerLink]="['/buy-cds',data.id]"> -->
-                        <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/cd-vector.png">
+                        <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/SmithEnsemble_tiltedCD.png">
                         <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
                     </a>
                     <!-- <a href="https://open.spotify.com/track/1CbrzsCPGoy8e3xXlZpaQt?si=kqLhJPl0TFKLXyAEbUfM2g&context=spotify%3Aalbum%3A4pSqwNqxvOo1PMoSgCzLZw&fbclid=IwY2xjawFIGkhleHRuA2FlbQIxMAABHRa-VQ_BRBrWRotl9QQ9QiuHOM2KXrw3VTrcTWBSK_hV661gjIuxTS4zpg_aem_YT13f7w9f6DWM6dpdSaxAA&nd=1&dlsi=94eaf0a29f364a83">
@@ -72,5 +74,110 @@
     </div>
     
 
+    <div id="emailSignUp">
+        <h3>Subscribe to receive updates</h3>
+        <div class="mt-8">
+            <form
+                class="flex flex-col gap-3"
+                #contactForm="ngForm"
+                (ngSubmit)="submitEmail(contactForm)"
+            >
+                <!-- Name field -->
+                <div>
+                <!-- <input
+                    name="name"
+                    [(ngModel)]="contactFormValues.name"
+                    #name="ngModel"
+                    type="text"
+                    placeholder="Full Name"
+                    class="w-full p-2 border border-gray-200 rounded-md"
+                    required
+                    minlength="2"
+                /> -->
+                <!-- input error message -->
+                <!-- <p
+                    class="ml-1 text-red-400 text-sm"
+                    *ngIf="name.errors && name.touched && name.dirty"
+                >
+                    name is required
+                </p> -->
+                </div>
+                <!-- email field -->
+                <div>
+                <input
+                    name="email"
+                    [(ngModel)]="contactFormValues.email"
+                    #email="ngModel"
+                    type="email"
+                    placeholder="Email"
+                    class="w-full p-2 border border-gray-200 rounded-md"
+                    required
+                    pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                />
+                <!-- input error message -->
+                <p
+                    class="ml-1 text-red-400 text-sm"
+                    *ngIf="email.errors && email.touched && email.dirty"
+                >
+                    invalid email
+                </p>
+                </div>
+                <!-- body field -->
+                <div>
+                <!-- <textarea
+                    name="body"
+                    [(ngModel)]="contactFormValues.body"
+                    #body="ngModel"
+                    cols="30"
+                    rows="10"
+                    class="w-full p-2 border border-gray-200 rounded-md"
+                    placeholder="Message"
+                    required
+                    minlength="20"
+                ></textarea> -->
+                <!-- input error message -->
+                <!-- <p
+                    class="ml-1 text-red-400 text-sm"
+                    *ngIf="body.errors && body.touched && body.dirty"
+                >
+                    at least write some words (20 characters length)
+                </p> -->
+                </div>
+                <!-- Alert -->
+                <div
+                [ngClass]="{
+                    hidden: !showAlert
+                }"
+                >
+                <p [ngClass]="alertColor" class="font-semibold">
+                    {{ alertMessage }}
+                </p>
+                </div>
+                <!-- submit button -->
+                <button
+                [disabled]="contactForm.invalid || onSubmit"
+                class="p-2 rounded-md font-bold uppercase text-white bg-light-color hover:bg-primary-color transition disabled:opacity-50 disabled:bg-light-color"
+                >
+                <ng-container *ngIf="onSubmit === false; else submittingEmail">
+                    Subscribe
+                </ng-container>
+                <ng-template #submittingEmail>
+                    <div class="animate-spin">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                </ng-template>
+                </button>
+            </form>
+        
+        </div>
+    </div>
  
+</div>
+
+<div id="samplePopUp"
+    *ngIf="showVideo_bool">
+    <div class="iframe-container">
+        <iframe src="https://www.youtube.com/embed/JnGAuYPwVaM?si=ls2fd8P9OXuMo8iA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+    <button (click)="hideVideo()">Close</button>
 </div>

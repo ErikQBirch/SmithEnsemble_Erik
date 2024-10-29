@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { OrderInfo } from './orderInfo';
-import { AlbumSongs } from '../buy-cds/album-songs';
+import { AlbumInfo } from '../buy-cds/album-info';
 
 @Component({
   selector: 'app-buy-cds-info',
@@ -18,7 +18,7 @@ export class BuyCdsInfoComponent implements OnInit{
   
   constructor() { }
 
-  AlbumSongs = new AlbumSongs();
+  AlbumInfo = new AlbumInfo();
   myOrder = new OrderInfo();
   orderID = 0;
   productName: string = ""
@@ -28,12 +28,12 @@ export class BuyCdsInfoComponent implements OnInit{
   addToCart(){
     switch (this.chosenItem){
       case "AllThings":
-        this.productName = 'The Smith Ensemble: All Things Come of Thee';
-        this.productPrice = 0.15;
+        this.productName = this.AlbumInfo.Titles[0];
+        this.productPrice = this.AlbumInfo.Prices.AllThings;
         break;
       case "BrightlyBeams":
-        this.productName = 'The Smith Six: Brightly Beams';
-        this.productPrice = 0.25;
+        this.productName = this.AlbumInfo.Titles[1];
+        this.productPrice = this.AlbumInfo.Prices.BrightlyBeams;
         break;
     }
 

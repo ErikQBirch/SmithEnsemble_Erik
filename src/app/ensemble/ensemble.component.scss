@@ -24,118 +24,262 @@
 
 @media only all and (min-width: 0) {
   @include universal_mobile;
-  #videoHolder{
+  .container{
+    padding:0;
     position:relative;
     overflow:hidden;
-    cursor: pointer;
-    .center {
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      width: 100%;
-      position:absolute;
-      top: 0;
-  
-      animation:fadeInAnimation ease 1.5s;
-      animation-iteration-count: 1; 
-      animation-fill-mode: forwards;
-    }
-    video{
-    }
-    .fadeOut_scss{
-      animation:fadeOutAnimation ease 1.5s;
-      animation-iteration-count: 1; 
-      animation-fill-mode: forwards;
-    }
-
-  }
-  .scripture-quote{
-    margin: 2em auto;
-    padding: 0.01em 2em 1em 2em;
-    font-size: 16px;
-    font-style:italic;
-    h2{
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bolder;
-    }
-  }
-
-  figure{
-    width: 100%;
-    img{
-      width: 100%;
-    }
-  }
-
-  .album-cover{
-    position:relative;
-
-  
-    width:60%;
-    max-width: 500px;
-
-    left: 5px;
-    z-index: 1;
-    margin: 2.5rem 0;
-
+    .row{
+      position:relative;
+      overflow:hidden;
+      #videoHolder{
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        // min-height: 27.5vh;
+        // max-height:45vh;
+        cursor: pointer;
+        .center {
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+          position:absolute;
+          top: 0;
+      
+          animation:fadeInAnimation ease 1.5s;
+          animation-iteration-count: 1; 
+          animation-fill-mode: forwards;
+        }
+        video{
+        }
+        .fadeOut_scss{
+          animation:fadeOutAnimation ease 1.5s;
+          animation-iteration-count: 1; 
+          animation-fill-mode: forwards;
+        }
     
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            margin: 1rem auto;
+            padding: 0.01em 2em 1em 2em;
+            font-size: 16px;
+            font-style:italic;
+            h2{
+              font-family: 'Times New Roman', Times, serif;
+              font-weight: bolder;
+            }
+          }
+          .my-container{
+            .album-cover{
+              position:relative;
+          
+            
+              width:60%;
+              max-width: 500px;
+          
+              left: 5px;
+              z-index: 1;
+              margin: 2.5rem 0;
+          
+              
+            }
+            .cd-album-cover{
+              position: absolute;
+          
+              width:50%;
+              max-width: 450px;
+          
+              border-radius: 1px;
+              transition: 2s;
+              margin: 2.5rem 0;
+            }
+          }
+          .my-container:hover  .cd-album-cover{
+            transform: translateX(60%);
+          }
+
+
+        }
+      }
+    }
+    
+    .my-text-info{
+      h3{
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bolder;
+      }
+    }
+
   }
+  #emailSignUp{
+    background-color: rgb(129, 201, 199);
+    padding: 1rem;
+    height: fit-content;
+    display:flex;
+    flex-direction: column;
 
-  .cd-album-cover{
-    position: absolute;
+    h3{}
+    .mt-8{
+      form{
+        button{
+          margin: 1rem auto;
+        }
+      }
+    }
 
-    width:50%;
-    max-width: 450px;
-
-    border-radius: 1px;
-    transition: 2s;
-    margin: 2.5rem 0;
   }
-  .my-container:hover  .cd-album-cover{
-    transform: translateX(60%);
+  #samplePopUp{
+    position:fixed;
+    top:0;
+    z-index: 5;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.75);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    div.iframe-container{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      iframe{
+        width: 360px;
+        height: 300px;
+      }
+    }
+    button{
+      width: fit-content;
+      padding: 0.5rem;
+      margin: 5rem auto;
+    }
   }
-
-
-  .buy-cd{
-  padding-left: 2em;
-  padding-right: 2em;
-
-  font-size: 1.2em;
-  }
-
-  .btn{
-    margin-bottom: 3em;
-  }
-
-  h3{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-  }
-
-
-
 }
-@media only all and (min-width: 760px) {}
+@media only all and (min-width: 760px) {
+  .container{
+    .row{
+      #videoHolder{
+        // height: 45vh;
+        .center {
+        }
+        video{
+        }
+        .fadeOut_scss{
+        }
+    
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            h2{
+            }
+          }
+          .my-container{
+            .album-cover{
+            }
+            .cd-album-cover{
+            }
+          }
+          .my-container:hover  .cd-album-cover{
+          }
+        }
+      }
+    }
+    
+    .my-text-info{
+      h3{
+      }
+    }
+
+  }
+  #samplePopUp{
+  
+    div.iframe-container{
+      iframe{
+      }
+    }
+    button{
+
+    }
+  }
+}
 @media only all and (min-width: 992px) {
   @include universal_med;
-  .scripture-quote{
-    font-size: 20px;
+  .container{
+    .row{
+      #videoHolder{
+        .center {
+        }
+        video{
+        }
+        .fadeOut_scss{
+        }
+    
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+    .my-text-info{
+      h3{
+      }
+      p{
+        font-size: 18px;
+      }
+    }
   }
-  p {
-    font-size: 18px;
+  #samplePopUp{
+  
+    div.iframe-container{
+      iframe{
+        width: 950px;
+        height: 500px;
+      }
+    }
+    button{
+
+    }
   }
 }
 @media only all and (min-width: 1200px) {}
 @media only all and (min-width: 1600px) {
   @include universal_mega;
-  .scripture-quote{
-    font-size: 30px;
-    h2{
-      font-size: 50px;
-      font-family: 'Times New Roman', Times, serif;
+  .container{
+    .row{
+      #videoHolder{
+        // height: 90vh;
+        .center {
+        }
+        video{
+        }
+        .fadeOut_scss{
+        }
+    
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            font-size: 30px;
+            h2{
+              font-size: 50px;
+            }
+          }
+        }
+      }
     }
-  }
-  p{
-    font-size: 18px;
+    .my-text-info{
+      h3{
+      }
+      p{
+        font-size: 18px;
+      }
+    }
   }
 }

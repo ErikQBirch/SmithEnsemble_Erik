@@ -30,11 +30,8 @@
     width: 300px;
     margin: 0 3rem;
   }
-  #itemPopUp #productInfo ol li {
-    font-size: 18px;
-  }
   #itemPopUp #productInfo #productInputs {
-    font-size: 24px;
+    font-size: 14px;
     margin: 2.5rem auto;
   }
   #itemPopUp #productInfo #productInputs input {
@@ -44,8 +41,8 @@
     padding: 1rem;
   }
   #itemPopUp #closeBtn {
-    font-size: 24px;
+    font-size: 14px;
     padding: 1rem 1.85rem;
-    margin: 5rem;
+    margin: 2.5rem;
   }
 }/*# sourceMappingURL=buy-cds-info.component.css.map */

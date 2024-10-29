@@ -24,16 +24,19 @@
           <h1 id="productName">
               The Smith Ensemble: All Things Come of Thee
           </h1>
-          <h3>$12</h3>
+          <h3>(${{AlbumInfo.Prices.AllThings}}.00)</h3>
         </div>
         <div *ngIf="chosenItem == 'BrightlyBeams'"> 
           <h1 id="productName">
               The Smith Six: Brightly Beams
           </h1>
-          <h3>$10</h3>
+          <h3>(${{AlbumInfo.Prices.BrightlyBeams}}.00)</h3>
         </div>
-        <ol>
-          <li *ngFor="let song of AlbumSongs.AllThings_songs">{{song}}</li>
+        <ol *ngIf="chosenItem == 'AllThings'">
+          <li *ngFor="let song of AlbumInfo.Songs.AllThings">{{song}}</li>
+        </ol>
+        <ol *ngIf="chosenItem == 'BrightlyBeams'">
+          <li *ngFor="let song of AlbumInfo.Songs.BrightlyBeams">{{song}}</li>
         </ol>
         <div id="productInputs">
           <input type="number" min="0"  #productQuantity value="" placeholder="Quantity" autofocus/>
