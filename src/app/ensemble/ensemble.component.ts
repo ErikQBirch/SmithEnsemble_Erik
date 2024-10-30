@@ -18,14 +18,14 @@ export class EnsembleComponent implements OnInit {
 
 
   hideVideo(){
-    let hero = this.videoHolder.nativeElement.children;
-    hero[1].play();
+    // let hero = this.videoHolder.nativeElement.children;
+    // hero[1].play();
     this.showVideo_bool = false;
   }
 
   showVideo(){
-    let hero = this.videoHolder.nativeElement.children;
-    hero[1].pause();
+    // let hero = this.videoHolder.nativeElement.children;
+    // hero[1].pause();
     this.showVideo_bool = true;
   }
 

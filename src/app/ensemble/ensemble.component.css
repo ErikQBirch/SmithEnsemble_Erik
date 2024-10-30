@@ -89,6 +89,12 @@
   .container .row .col-md .listen-now .my-container:hover .cd-album-cover {
     transform: translateX(60%);
   }
+  .container .row .col-md figure {
+    width: 100%;
+  }
+  .container .row .col-md figure img {
+    width: 100%;
+  }
   .container .my-text-info h3 {
     font-family: "Times New Roman", Times, serif;
     font-weight: bolder;
@@ -133,6 +139,11 @@
     margin: 5rem auto;
   }
 }
+@media only all and (min-width: 760px) {
+  .container .my-text-info {
+    padding: 0 5rem;
+  }
+}
 @media only all and (min-width: 992px) {
   .container {
     width: 80vw;
@@ -148,12 +159,15 @@
     height: 500px;
   }
 }
-@media only all and (min-width: 1600px) {
+@media only all and (min-width: 1200px) {
   .container .row .col-md .listen-now .scripture-quote {
     font-size: 30px;
   }
   .container .row .col-md .listen-now .scripture-quote h2 {
     font-size: 50px;
+  }
+  .container .my-text-info {
+    padding: 0 17.5rem;
   }
   .container .my-text-info p {
     font-size: 18px;

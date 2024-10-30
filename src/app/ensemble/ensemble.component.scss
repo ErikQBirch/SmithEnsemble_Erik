@@ -102,10 +102,16 @@
 
 
         }
+        figure{
+          width: 100%;
+          img{
+            width: 100%;
+          }}
       }
     }
     
     .my-text-info{
+      // padding: 0 1rem;
       h3{
         font-family: 'Times New Roman', Times, serif;
         font-weight: bolder;
@@ -190,6 +196,8 @@
     }
     
     .my-text-info{
+      padding: 0 5rem;
+      // background-color: red;
       h3{
       }
     }
@@ -248,9 +256,7 @@
     }
   }
 }
-@media only all and (min-width: 1200px) {}
-@media only all and (min-width: 1600px) {
-  @include universal_mega;
+@media only all and (min-width: 1200px) {
   .container{
     .row{
       #videoHolder{
@@ -275,6 +281,7 @@
       }
     }
     .my-text-info{
+      padding: 0 17.5rem;
       h3{
       }
       p{
@@ -282,4 +289,38 @@
       }
     }
   }
+}
+@media only all and (min-width: 1600px) {
+  @include universal_mega;
+  // .container{
+  //   .row{
+  //     #videoHolder{
+  //       // height: 90vh;
+  //       .center {
+  //       }
+  //       video{
+  //       }
+  //       .fadeOut_scss{
+  //       }
+    
+  //     }
+  //     .col-md{
+  //       .listen-now{
+  //         .scripture-quote{
+  //           font-size: 30px;
+  //           h2{
+  //             font-size: 50px;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  //   .my-text-info{
+  //     h3{
+  //     }
+  //     p{
+  //       font-size: 18px;
+  //     }
+  //   }
+  // }
 }
