@@ -34,7 +34,6 @@ export class BuyCdsCartComponent implements OnInit {
   fullOrder: string ='';
   newCart = [];
   PurchaseCost: number = 0.00;
-  taxPercentage: number = 0.07;
   shippingCost: number = 0.5;
 
 
