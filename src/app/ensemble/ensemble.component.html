@@ -35,7 +35,7 @@
             <!-- Fixed the cd is part of the link. -->
                <div class="my-container">
                 <!-- <a href="https://www.heirloomartco.com/products/the-smith-ensemble-all-things-come-of-thee?_pos=1&_sid=2085e6cd3&_ss=r"> -->
-                    <a routerLink="/buy-cds" >
+                    <a routerLink="/buy-cds" [queryParams]="{start:'allThings'}">
                     <!-- <a [routerLink]="['/buy-cds',data.id]"> -->
                         <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/SmithEnsemble_tiltedCD.png">
                         <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
@@ -48,7 +48,7 @@
                 
         </div>
 
-        <button type="button" (click)="showVideo()">Click for Sample</button>
+        <!-- <button type="button" (click)="showVideo()">Click for Sample</button> -->
             
         </div>
     </div>
@@ -56,24 +56,38 @@
 
     <div class="col-md-12 text-center my-text-info">
         <h3>THE SMITH ENSEMBLE</h3>  
-
-
         <p>The Smith Ensemble formed as a result of many family gatherings through the years, which oft times included singing together favorite choral music around the piano in our living room. The ensemble is made up of two parents, eight of their children, and two sons-in-law. This recording was born out of the desire to share our love of faith, family, and friends. We hope you feel Heaven's light and love through the inspirational messages found within these anthems and sacred songs.</p>
-
-
         <p>We are forever indebted to our parents, Fairon and Carolyn Smith, and Fred and Naomi Bonney, who instilled in us at an early age a love of great and inspiring music, who believed in, and supported us through our formative years of musical training, and who have continued to be our greatest fans. We dedicate this humble musical offering to them! </p>
-
-
-
         <p>Further, this CD project never would have materialized without the interest, vision, encouragement, and generous support of Blake and Nancy Roney, and Brad and Shanda Roberts. These dear friends saw something in us that we didn’t see in ourselves. For this we express our deepest gratitude!</p>
-
         <div class="col">
             <!-- <p>Or Check us out at these websites:</p> -->
-            <app-icons-ensemble></app-icons-ensemble>
         </div>
     </div>
+    <div id="videoSamples">
+        <h3>SAMPLE VIDEOS</h3>  
+        <div id="videoHolder">
+            <iframe 
+                src="https://www.youtube.com/embed/kEUMsWoW8V8"
+                title="YouTube video player"   
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen
+            ></iframe>
+            <iframe 
+                src="https://www.youtube.com/embed/pPAb4DQsIm8"
+                title="YouTube video player"   
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen
+            ></iframe>
+        </div>
+        <button><a routerLink="/videos" [queryParams]="{start: 'ensemble'}">See more videos</a></button>
+    </div>
     
-
+        <app-icons-ensemble></app-icons-ensemble>
+        
     <div id="emailSignUp">
         <h3>Subscribe to receive updates</h3>
         <div class="mt-8">
