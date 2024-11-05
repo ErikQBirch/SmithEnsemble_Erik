@@ -10,9 +10,14 @@
             <p>Here are some music videos that we have made, we hope you enjoy listening to them as much as we had filming them.</p>
         </div>
     </div>
+    <div>
+        <button>Smith Ensemble</button>
+        <button>Smith Six</button>
+        <button>Woodsmith</button>
+    </div>
     <div class="row">
         <div class="col-md-6">
-           <div *ngFor="let vid of videoListCol_one" > 
+           <div *ngFor="let vid of videoListCol_one" class="{{vid.filter}}"> 
     
             <div class="video-container">
 
@@ -29,7 +34,7 @@
         
         <div class="col-md-6">
 
-            <div *ngFor="let vid of videoListCol_two"> 
+            <div *ngFor="let vid of videoListCol_two" class="{{vid.filter}}"> 
     
                 <div class="video-container">
     

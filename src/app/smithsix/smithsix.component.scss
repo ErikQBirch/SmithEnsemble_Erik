@@ -6,38 +6,30 @@
 
 @media only all and (min-width: 0) {
   @include universal_mobile;
-  .container {
-    position: relative;
-    text-align: center;
-    background-color: #f5f5f5;
-    padding: 2em;
-    margin-bottom:em;
-    margin-top:4em;
-    } 
-  
-  .vid{
-    margin: 2em;
+  figure{
+    margin: 0 auto;
+    img{
+      padding: 2em;
+    }
   }
-  
-    /* Top right text */
-  /* .top-right {
-      position: absolute;
-      top: 1em;
-      right: 5em;
-    } */
-  
-  /* center the image */
-  .center {
+  h2{
+      font-family: 'Times New Roman', Times, serif;
+      font-weight: bolder;
+  }
+  h3{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+  }
+    /* center the image */
+    .center {
       display: block;
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-  
       animation:fadeInAnimation ease 1s;
       animation-iteration-count: 1; 
       animation-fill-mode: forwards;
     }
-  
   
     @keyframes fadeInAnimation { 
       0% { 
@@ -47,111 +39,267 @@
           opacity: 1; 
        } 
   } 
-  
-  .album-cover{
-    position:relative;
-  
-   
-    width:60%;
-    max-width: 500px;
-  
-    left: 5px;
-    z-index: 1;
-    margin: 2.5rem 0;
-  
-    
-  }
-  
-  .cd-album-cover{
-    position: absolute;
-  
-   width:50%;
-    max-width: 450px;
-  
-    border-radius: 1px;
-    transition: 2s;
-    margin: 2.5rem 0;
-  
-   
-   
-  
-  }
-  .my-container:hover .cd-album-cover{
-    transform: translateX(60%);
-  }
-  
-  figure{
-    margin: 0 auto;
-    img{
-      padding: 2em;
-    }
-  }
-  
-  
-  .play-now-bttn{
-      background-color: #ff8c62;
-      border:none;
-  
-      width: 15em;
-      height: 3em;
-      border-radius: 2em;
-  }
-  
-  h2{
-  
-      font-weight: bolder;
-  }
-  
-  
-  .featured-vid{
-  
-    max-width: 500px;
-  }
-  
 
-  .scripture-quote{
-    // margin: 2em auto;
-    // padding: 0.01em 2em 1em 2em;
-    font-size: 16px;
-    font-style: italic;
-    h2{
-      font-family: 'Times New Roman', Times, serif;
-      font-weight: bolder;
+  .container {
+    position: relative;
+    text-align: center;
+    background-color: #f5f5f5;
+    padding: 2em;
+    margin-bottom:em;
+    margin-top:4em;
+    .row{
+      .col{
+        figure{
+          img{}
+        }
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            // margin: 2em auto;
+            // padding: 0.01em 2em 1em 2em;
+            font-size: 16px;
+            font-style: italic;
+            h2{
+              font-family: 'Times New Roman', Times, serif;
+              font-weight: bolder;
+            }
+          }
+          .my-container{
+            a{
+              .cd-album-cover{
+                position: absolute;
+                width:50%;
+                max-width: 450px;
+                border-radius: 1px;
+                transition: 2s;
+                margin: 2.5rem 0;
+              }
+              .album-cover{
+                position:relative;
+                width:60%;
+                max-width: 500px;
+                left: 5px;
+                z-index: 1;
+                margin: 2.5rem 0;
+              }
+            }
+          }
+          .my-container:hover .cd-album-cover{
+            transform: translateX(60%);
+          }
+        }
+      }
+      .my-text-info{
+        h3{}
+        p{}
+      }
     }
-  }
-  
-  h3{
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bolder;
-  }
-  
-  /* /* Container holding the image and the text */
-  
+    #videoSamples{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin: 2.5rem auto;
+      div#videoHolder{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 80%;
+        iframe{
+          display:flex;
+
+          margin: 0 auto 2.5rem auto;
+        }
+      }
+    }
+    } 
+    
 
 }
-@media only all and (min-width: 760px) {}
+@media only all and (min-width: 760px) {
+  .container {
+    .row{
+      .col{
+        figure{
+          img{}
+        }
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            h2{
+            }
+          }
+          .my-container{
+            a{
+              .cd-album-cover{
+              }
+              .album-cover{
+              }
+            }
+          }
+          .my-container:hover .cd-album-cover{
+          }
+        }
+      }
+      .my-text-info{
+        h3{}
+        p{
+        }
+      }
+    }
+    #videoSamples{
+      div#videoHolder{
+        // flex-direction:row;
+        iframe{
+          width: 100%;
+          height: 350px;
+          margin: 0 auto 5rem auto;
+        }
+      }
+    }
+  } 
+}
 @media only all and (min-width: 992px) {
   @include universal_med;
-  .scripture-quote{
-    font-size: 20px;
-  }
   figure{
     width: 50vw;
   }
-  p {
-    font-size: 18px;
-  }
-}
-@media only all and (min-width: 1200px) {}
-@media only all and (min-width: 1600px) {
-  .scripture-quote{
-    font-size: 30px;
-    h2{
-      font-size: 50px;
-      font-family: 'Times New Roman', Times, serif;
+  .container {
+    .row{
+      .col{
+        figure{
+          img{}
+        }
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            font-size: 20px;
+            h2{}
+          }
+          .my-container{
+            a{
+              .cd-album-cover{
+              }
+              .album-cover{
+              }
+            }
+          }
+          .my-container:hover .cd-album-cover{
+          }
+        }
+      }
+      .my-text-info{
+        h3{}
+        p {
+          font-size: 18px;
+        }
+      }
     }
+    #videoSamples{
+      div#videoHolder{
+        iframe{
+        }
+      }
+    }
+  } 
+}
+@media only all and (min-width: 1200px) {
+  .container {
+    .row{
+      .col{
+        figure{
+          img{}
+        }
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            font-size: 30px;
+            h2{
+              font-size: 50px;
+            }
+          }
+          .my-container{
+            a{
+              .cd-album-cover{
+              }
+              .album-cover{
+              }
+            }
+          }
+          .my-container:hover .cd-album-cover{
+          }
+        }
+      }
+      .my-text-info{
+        h3{}
+        p{
+          font-size: 18px;
+        }
+      }
+    }
+    #videoSamples{
+      div#videoHolder{
+        flex-direction:row;
+        justify-content: space-around;
+        width: 90%;
+        margin: 0 auto 2.5rem auto;
+        iframe{
+          width: 45%;
+          height: 350px;
+          margin: 0 auto 0rem auto;
+        }
+      }
+    }
+  } 
+}
+@media only all and (min-width: 1600px) {
+  figure{
+    width: 50vw;
   }
-  p{
-    font-size: 18px;
-  }
+  .container {
+    .row{
+      .col{
+        figure{
+          img{}
+        }
+      }
+      .col-md{
+        .listen-now{
+          .scripture-quote{
+            font-size: 30px;
+            h2{
+              font-size: 50px;
+            }
+          }
+          .my-container{
+            a{
+              .cd-album-cover{
+              }
+              .album-cover{
+              }
+            }
+          }
+          .my-container:hover .cd-album-cover{
+          }
+        }
+      }
+      .my-text-info{
+        h3{}
+        p{
+          font-size: 18px;
+        }
+      }
+    }
+    #videoSamples{
+      div#videoHolder{
+        iframe{
+        }
+      }
+    }
+  } 
 }

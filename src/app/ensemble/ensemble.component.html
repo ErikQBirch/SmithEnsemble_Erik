@@ -35,7 +35,7 @@
             <!-- Fixed the cd is part of the link. -->
                <div class="my-container">
                 <!-- <a href="https://www.heirloomartco.com/products/the-smith-ensemble-all-things-come-of-thee?_pos=1&_sid=2085e6cd3&_ss=r"> -->
-                    <a routerLink="/buy-cds" [queryParams]="{start:'allThings'}">
+                    <a routerLink="/buy-cds" [queryParams]="{start:'AllThings'}">
                     <!-- <a [routerLink]="['/buy-cds',data.id]"> -->
                         <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/SmithEnsemble_tiltedCD.png">
                         <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
@@ -83,7 +83,7 @@
                 allowfullscreen
             ></iframe>
         </div>
-        <button><a routerLink="/videos" [queryParams]="{start: 'ensemble'}">See more videos</a></button>
+        <button><a routerLink="/videos" [queryParams]="{filter: 'ensemble'}">See more videos</a></button>
     </div>
     
         <app-icons-ensemble></app-icons-ensemble>

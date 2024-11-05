@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OrderInfo } from '../buy-cds-info/orderInfo';
 import { allCosts } from '../buy-cds-cart/allCosts';
+import { ActivatedRoute } from '@angular/router';
+import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-buy-cds',
@@ -13,8 +15,6 @@ export class BuyCdsComponent implements OnInit {
   @Input() grandTotalCost: number = 0;
   @Input() myOrders = [];
   
-  
-  
   changedTotal = 0;
   customerOrder = new allCosts(0,0,0,0);
   duplicate = false;
@@ -23,6 +23,8 @@ export class BuyCdsComponent implements OnInit {
   showCartPopUp = false;
   showItemPopUp = false;
   sumTotal = 0;
+
+  constructor(private route: ActivatedRoute){}
 
   additionalCosts(orders: OrderInfo[]){
     this.changedTotal = 0; //RESET
@@ -76,6 +78,17 @@ export class BuyCdsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const queryParams = this.route.snapshot.queryParams;
+    const paramValue = queryParams['start'];
+    console.log(queryParams);
+    switch(queryParams.start){
+      case "AllThings":
+      case "BrightlyBeams":
+        this.selectItem(queryParams.start)
+        break;
+      default:
+        break;
+    }
   }
 }
 

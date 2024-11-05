@@ -9,24 +9,22 @@
    
     <div class="row">
         <div class="col-md">
-
-
         <div class="listen-now top-right">
             <div class="scripture-quote">
                 <!-- <h2>Isaiah 55:12</h2>
                 <article>"For ye shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap their hands."</article> -->
             </div>  
-               <div class="my-container">
-                    <a routerLink="/buy-cds">
-                        <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/CDSmithSix.png">
-                        <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
-                    </a>
+            <div class="my-container">
+                <a routerLink="/buy-cds" [queryParams]="{start:'BrightlyBeams'}">
+                    <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/CDSmithSix.png">
+                    <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
+                </a>
 
 
                 <!-- <a href="https://www.heirloomartco.com/products/the-smith-six-brightly-beams?pr_prod_strat=copurchase&pr_rec_pid=6164485800110&pr_ref_pid=4996202496136&pr_seq=uniform">   
                 <img class="cd-album-cover " src="../../assets/images/SmithEnsemblePics/CDSmithSix.png">
                 <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
-            </a> -->
+                </a> -->
             </div>
                 
         </div>
@@ -69,6 +67,28 @@
     
     <p>The late Fairon Smith, Grandfather to The Smith Six, spent 27 years in the US Navy. His most beloved hymn, unquestionably due to his long naval career, was Brightly Beams Our Father’s Mercy. While “Graumpy” is no longer with us, we believe he would be pleased with this recording, and humbly dedicate Brightly Beams to him.</p>
  
+</div>
+<div id="videoSamples">
+    <h3>SAMPLE VIDEOS</h3>  
+    <div id="videoHolder">
+        <iframe 
+            src="https://www.youtube.com/embed/kEUMsWoW8V8"
+            title="YouTube video player"   
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+        <iframe 
+            src="https://www.youtube.com/embed/pPAb4DQsIm8"
+            title="YouTube video player"   
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    <button><a routerLink="/videos" [queryParams]="{filter: 'six'}">See more videos</a></button>
 </div>
 
 <app-icons-smithsix></app-icons-smithsix>
