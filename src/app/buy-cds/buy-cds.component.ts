@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit} from '@angular/core';
 import { OrderInfo } from '../buy-cds-info/orderInfo';
 import { allCosts } from '../buy-cds-cart/allCosts';
 import { ActivatedRoute } from '@angular/router';
@@ -90,5 +90,6 @@ export class BuyCdsComponent implements OnInit {
         break;
     }
   }
+  
 }
 

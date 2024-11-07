@@ -63,6 +63,9 @@
     width: 100%;
     margin: 0 auto;
   }
+  .layer2 button {
+    margin-top: 2.5rem;
+  }
   .layer1 {
     min-height: 100vh;
     width: 100%;
@@ -81,7 +84,7 @@
     font-size: 20px;
   }
   .layer3 #buttons {
-    font-size: 20px;
+    font-size: 16px;
   }
   .layer2 #myPaypalButtons {
     width: 50% !important;
@@ -92,7 +95,7 @@
     overflow: hidden;
   }
   .layer2 button {
-    font-size: 20px;
+    font-size: 16px;
     padding: 1rem;
   }
 }/*# sourceMappingURL=buy-cds-cart.component.css.map */

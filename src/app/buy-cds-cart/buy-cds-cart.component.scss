@@ -62,7 +62,9 @@
       width: 100%;
       margin: 0 auto;
     }
-    button{}
+    button{
+      margin-top: 2.5rem;
+    }
     // display:none;
   }
   .layer1{
@@ -109,7 +111,7 @@
       font-size:20px;
     }
     #buttons{
-      font-size:20px;
+      font-size:16px;
       button{}
     }
   }
@@ -123,7 +125,7 @@
       overflow: hidden;
     }
     button{
-      font-size:20px;
+      font-size:16px;
       padding: 1rem;
     }
   }
