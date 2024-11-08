@@ -121,6 +121,9 @@
   }
 }
 @media only all and (min-width: 1200px) {
+  h3 {
+    margin-top: 40px;
+  }
   .container .row .col-md .listen-now .scripture-quote {
     font-size: 30px;
   }

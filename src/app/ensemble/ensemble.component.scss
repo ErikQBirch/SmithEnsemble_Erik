@@ -286,6 +286,9 @@
 }
 @media only all and (min-width: 1200px) {
   .container{
+    h3{
+      margin-top: 40px;
+    }
     .row{
       #videoHolder{
         // height: 90vh;
