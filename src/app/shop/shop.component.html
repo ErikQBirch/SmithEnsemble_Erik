@@ -4,45 +4,27 @@
     <div class="row">
         <div class="col">
               <h1 id="title">Buy CDs</h1>
-              <section class="sales-floor">
-                  <div>
-                      <article class="purchase-item" (click)="selectItem('AllThings')">
-                              <figure>
-                                  <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
-                              </figure>
-                              <h2>All Things Come of Thee</h2>
-                              <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
-                      </article>
-                      <article class="purchase-item" (click)="selectItem('BrightlyBeams')">
-                              <figure>
-                                  <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
-                              </figure>
-                              <h2>The Smith Six: Brightly Beams</h2>
-                              <!-- <input type="number" id="BrightlyBeams" *BrightlyBeams placeholder="0" hidden> -->
-                      </article>
-                      <article class="purchase-item" (click)="selectItem('AllThings')">
-                          <figure>
-                              <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
-                          </figure>
-                          <h2>All Things Come of Thee</h2>
-                          <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
-                  </article>
-                  <article class="purchase-item" (click)="selectItem('AllThings')">
-                      <figure>
-                          <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
-                      </figure>
-                      <h2>All Things Come of Thee</h2>
-                      <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
-              </article>
-                  </div>
-                  <ng-template
-                      [ngIf]="myOrders.length != 0">
-                      <button (click)="toggleCartPopUp(true)">Show Cart</button>
-                  </ng-template>
-              </section>
+              <ng-template
+                [ngIf]="!showItemPopUp && !showCartPopUp">                  
+                  <section class="sales-floor">
+                      <div>
+                        <article *ngFor="let key of AlbumInfo.Keys" class="purchase-item" (click)="selectItem(key)">
+                            <figure>
+                                <img class="album-cover" src="../../assets/images/SmithEnsemblePics/{{AlbumInfo.AlbumCovers[key]}}">
+                            </figure>
+                            <h2>{{AlbumInfo.Titles[key]}}</h2>
+                        </article>
+                    </div>
+                      <ng-template
+                          [ngIf]="myOrders.length != 0">
+                          <button (click)="toggleCartPopUp(true)">Show Cart</button>
+                      </ng-template>
+                  </section>
+              </ng-template>
               <section class="cart_section"
                   [ngStyle]="{'z-index':showCartPopUp ? '4' : '1'}">
                   <app-shop-cart 
+                      [(cartPopUp)] = "showCartPopUp"
                       [(soonToPurchase)]="myOrders"
                       [(customerOrder)]="customerOrder"
                       (changedCart)="changeOrder($event)"

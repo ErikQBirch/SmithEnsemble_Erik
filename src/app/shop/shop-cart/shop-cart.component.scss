@@ -1,0 +1,138 @@
+@mixin standardPopUpFormat{
+  min-height: 100vh;
+  width: 100%;
+  position:absolute;
+  top:0;
+  background-color: #F5F5F5;
+  padding-top: 2.5rem;
+}
+
+@media only all and (min-width: 0) {
+  #popUp_cart{
+    padding-top:2.5rem;
+    position:relative;
+  }
+  .layer3{
+    @include standardPopUpFormat();
+    z-index: 3;
+    ul{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      list-style-type: circle;
+      padding: 0;
+      li{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba(150,150,150,0.75);
+        border-radius:2.5px;
+        width: 90%;
+        padding: 1rem 0;
+        background-color: rgba(255,255,255,0.75);
+        margin: 1rem auto;
+        span{}
+        button{
+          padding: 0 2.5rem;
+          width: fit-content;
+        }
+      }
+    }
+    div#appliedCosts{
+      display:flex;
+      flex-direction: column;
+      margin: 2.5rem auto;
+    }
+    #buttons{
+      display:flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0 auto;
+      button{
+        margin: 0 1rem;
+      }
+    }
+  }
+  .layer2{
+    @include standardPopUpFormat();
+    z-index: 2;
+    margin: 2.5rem auto;
+    #myPaypalButtons{
+      // width: 50vw;
+      width: 100%;
+      margin: 0 auto;
+    }
+    button{
+      margin-top: 2.5rem;
+    }
+    // display:none;
+  }
+  .layer1{
+    @include standardPopUpFormat();
+    z-index:1;
+    // display:none;
+  }
+}
+@media only all and (min-width: 760px) {
+  #popUp_cart{
+  }
+  .layer3{
+    ul{
+      li{
+        span{}
+        button{
+        }
+      }
+    }
+    div#appliedCosts{
+    }
+    #buttons{
+      button{}
+    }
+  }
+  .layer2{
+  }
+  .layer1{
+  }
+}
+@media only all and (min-width: 992px) {
+  #popUp_cart{
+  }
+  .layer3{
+    ul{
+      font-size:20px;
+      li{
+        span{}
+        button{
+        }
+      }
+    }
+    div#appliedCosts{
+      font-size:20px;
+    }
+    #buttons{
+      font-size:16px;
+      button{}
+    }
+  }
+  .layer2{
+    #myPaypalButtons{
+      width: 50% !important;
+      margin: 0 auto;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    button{
+      font-size:16px;
+      padding: 1rem;
+    }
+  }
+  .layer1{
+  }
+}
+@media only all and (min-width: 1200px) {}
+
+
+

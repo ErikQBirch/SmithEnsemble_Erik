@@ -59,19 +59,23 @@ export class ShopCartComponent implements OnInit {
   }
 
   goCheckOut(){
-    render(
-      {
-        id:"#myPaypalButtons",
-        currency:"USD",
-        value:this.customerOrder.grandTotal.toString(),
-        onApprove:(details) => {
-          
-          this.submitEmail(this.contactForm)
-        }
-      }
-    )
-
     this.checkOutPopUp = true;
+
+    setTimeout(()=>{
+      render(
+        {
+          id:"#myPaypalButtons",
+          currency:"USD",
+          value:this.customerOrder.grandTotal.toString(),
+          onApprove:(details) => {
+            this.submitEmail(this.contactForm)
+          }
+        }
+      )
+    }
+    ,10)
+    
+
 
     this.fullOrder = "";//reset
 

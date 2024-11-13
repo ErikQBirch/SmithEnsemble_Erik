@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { OrderInfo } from '../orderInfo';
-import { AlbumInfo } from '../album-info';
+import { AlbumInfo } from '../AlbumInfo';
 
 @Component({
   selector: 'app-shop-info',
@@ -28,12 +28,16 @@ export class ShopInfoComponent implements OnInit{
   addToCart(){
     switch (this.chosenItem){
       case "AllThings":
-        this.productName = this.AlbumInfo.Titles[0];
+        this.productName = this.AlbumInfo.Titles.AllThings;
         this.productPrice = this.AlbumInfo.Prices.AllThings;
         break;
       case "BrightlyBeams":
-        this.productName = this.AlbumInfo.Titles[1];
+        this.productName = this.AlbumInfo.Titles.BrightlyBeams;
         this.productPrice = this.AlbumInfo.Prices.BrightlyBeams;
+        break;
+      default:
+        this.productName = this.AlbumInfo.Titles.AllThings;
+        this.productPrice = this.AlbumInfo.Prices.AllThings;
         break;
     }
 

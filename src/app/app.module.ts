@@ -40,6 +40,7 @@ import { ShopComponent } from './shop/shop.component';
 import { ShopCartComponent } from './shop/shop-cart/shop-cart.component';
 import { ShopInfoComponent } from './shop/shop-info/shop-info.component';
 
+
 //z import { NgxPayPalModule } from 'ngx-paypal';
 
 
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
     ShopComponent,
     ShopCartComponent,
     ShopInfoComponent,
+
 
  
   

@@ -2,41 +2,24 @@
   [ngIf]="itemPopUp">
     <section id="itemPopUp">
       <div id="productImgs">
-          <div *ngIf="chosenItem == 'AllThings'" class="imgHolder">
+          <div class="imgHolder">
             <figure>
-              <img src="../../assets/images/SmithEnsemblePics/front.png" alt="AllThingsCover">
+              <img src="../../assets/images/SmithEnsemblePics/{{AlbumInfo.AlbumCovers[chosenItem]}}" alt="{{AlbumInfo.Titles[chosenItem]}}">
             </figure>
             <figure>
-              <img src="../../assets/images/SmithEnsemblePics/cd-vector(1).png" alt="AllThingsDisk">
+              <img src="../../assets/images/SmithEnsemblePics/{{AlbumInfo.SecondaryPics[chosenItem]}}" alt="{{AlbumInfo.Titles[chosenItem]}}">
             </figure>
           </div>
-          <div *ngIf="chosenItem == 'BrightlyBeams'" class="imgHolder">
-            <figure>
-              <img src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png" alt="BrightlyBeamsCover">
-            </figure>
-            <figure>
-              <img src="../../assets/images/SmithEnsemblePics/SmithSixCD.png" alt="BrightlyBeamsDisk">
-            </figure>
-        </div>
       </div>
       <div id="productInfo">
-        <div *ngIf="chosenItem == 'AllThings'">
+        <div>
           <h1 id="productName">
-              The Smith Ensemble: All Things Come of Thee
+              {{AlbumInfo.Titles[chosenItem]}}
           </h1>
-          <h3>(${{AlbumInfo.Prices.AllThings}}.00)</h3>
+          <h3>(${{AlbumInfo.Prices[chosenItem]}}.00)</h3>
         </div>
-        <div *ngIf="chosenItem == 'BrightlyBeams'"> 
-          <h1 id="productName">
-              The Smith Six: Brightly Beams
-          </h1>
-          <h3>(${{AlbumInfo.Prices.BrightlyBeams}}.00)</h3>
-        </div>
-        <ol *ngIf="chosenItem == 'AllThings'">
-          <li *ngFor="let song of AlbumInfo.Songs.AllThings">{{song}}</li>
-        </ol>
-        <ol *ngIf="chosenItem == 'BrightlyBeams'">
-          <li *ngFor="let song of AlbumInfo.Songs.BrightlyBeams">{{song}}</li>
+        <ol>
+          <li *ngFor="let song of AlbumInfo.Songs[chosenItem]">{{song}}</li>
         </ol>
         <div id="productInputs">
           <input type="number" min="0"  #productQuantity value="" placeholder="Quantity" autofocus/>
@@ -44,5 +27,10 @@
         </div>
       </div>
       <button id="closeBtn" (click)="closePopUp();">Back to Catalog</button>
+    </section>
+    <section id="zoomIn">
+      <figure>
+        <img>
+      </figure>
     </section>
 </ng-template>
