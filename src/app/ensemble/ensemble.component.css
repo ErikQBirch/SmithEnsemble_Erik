@@ -64,6 +64,9 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
+  .container .row .col-md #banner img {
+    content: url("../../assets/images/SmithEnsemblePics/SmithEnsemble-Cover - Copy.jpg");
+  }
   .container .row .col-md .listen-now .scripture-quote {
     margin: 1rem auto;
     padding: 0.01em 2em 1em 2em;
@@ -73,6 +76,7 @@
   .container .row .col-md .listen-now .scripture-quote h2 {
     font-family: "Times New Roman", Times, serif;
     font-weight: bolder;
+    margin-top: 7.5rem;
   }
   .container .row .col-md .listen-now .my-container .album-cover {
     position: relative;
@@ -185,6 +189,9 @@
 @media only all and (min-width: 1200px) {
   .container h3 {
     margin-top: 40px;
+  }
+  .container .row .col-md #banner img {
+    content: url("../../assets/images/SmithEnsemblePics/SmithBanner.jpg");
   }
   .container .row .col-md .listen-now .scripture-quote {
     font-size: 30px;
