@@ -42,21 +42,21 @@
               </section>
               <section class="cart_section"
                   [ngStyle]="{'z-index':showCartPopUp ? '4' : '1'}">
-                  <app-buy-cds-cart 
+                  <app-shop-cart 
                       [(soonToPurchase)]="myOrders"
                       [(customerOrder)]="customerOrder"
                       (changedCart)="changeOrder($event)"
                       (cartPopUpChange)="toggleCartPopUp($event)"
-                  ></app-buy-cds-cart>
+                  ></app-shop-cart>
               </section>
               <section class="productInfo_section"
                   [ngStyle]="{'z-index':showItemPopUp ? '4' : '1'}">
-                  <app-buy-cds-info
+                  <app-shop-info
                       [(itemPopUp)] = "showItemPopUp"
                       [chosenItem] = "selectedItem"
                       (addedOrder)="applyOrder($event)"
                   >
-                  </app-buy-cds-info>
+                  </app-shop-info>
               </section>
   
   
