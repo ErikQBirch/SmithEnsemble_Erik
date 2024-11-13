@@ -25,6 +25,10 @@
     background-color: #f5f5f5;
     padding: 2.5rem 0;
   }
+  .sales-floor div {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .sales-floor div .purchase-item {
     width: 75%;
     background-color: whitesmoke;
@@ -81,6 +85,9 @@
   }
 }
 @media only all and (min-width: 992px) {
+  .sales-floor div .purchase-item {
+    width: 35%;
+  }
   .sales-floor button {
     font-size: 16px;
   }
