@@ -1,31 +1,67 @@
-<div class="container">
-  <div class="row">
-      <div class="col p-2">
-          <figure>
-              <img class="center" src="../../assets/images/SmithEnsemblePics/ComingSoon.jpg">
-          </figure>
-      </div>
-  </div>
- 
 
-
-<!-- <div class="row">
-  <div class="col">
-      <div class="vid">
-
-          <div >
-              <iframe class="featured-vid" width="75%" height="315px 
-              " src="https://www.youtube.com/embed/GZDnCmSxnSY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-              
-           </div>
-      </div>
-
-  </div>
-</div> -->
-
-
-
-
-<app-icons-smithsix></app-icons-smithsix>
-
-</div>
+<div class="container video-body">  
+    
+    <div class="row">
+        <div class="col">
+              <h1 id="title">Buy CDs</h1>
+              <section class="sales-floor">
+                  <div>
+                      <article class="purchase-item" (click)="selectItem('AllThings')">
+                              <figure>
+                                  <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
+                              </figure>
+                              <h2>All Things Come of Thee</h2>
+                              <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
+                      </article>
+                      <article class="purchase-item" (click)="selectItem('BrightlyBeams')">
+                              <figure>
+                                  <img class="album-cover" src="../../assets/images/SmithEnsemblePics/Smith-SixCDsmall.png">
+                              </figure>
+                              <h2>The Smith Six: Brightly Beams</h2>
+                              <!-- <input type="number" id="BrightlyBeams" *BrightlyBeams placeholder="0" hidden> -->
+                      </article>
+                      <article class="purchase-item" (click)="selectItem('AllThings')">
+                          <figure>
+                              <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
+                          </figure>
+                          <h2>All Things Come of Thee</h2>
+                          <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
+                  </article>
+                  <article class="purchase-item" (click)="selectItem('AllThings')">
+                      <figure>
+                          <img class="album-cover" src="../../assets/images/SmithEnsemblePics/front.png">
+                      </figure>
+                      <h2>All Things Come of Thee</h2>
+                      <!-- <input type="number" id="AllThingsCount" *AllThingsCount placeholder="0" hidden> -->
+              </article>
+                  </div>
+                  <ng-template
+                      [ngIf]="myOrders.length != 0">
+                      <button (click)="toggleCartPopUp(true)">Show Cart</button>
+                  </ng-template>
+              </section>
+              <section class="cart_section"
+                  [ngStyle]="{'z-index':showCartPopUp ? '4' : '1'}">
+                  <app-buy-cds-cart 
+                      [(soonToPurchase)]="myOrders"
+                      [(customerOrder)]="customerOrder"
+                      (changedCart)="changeOrder($event)"
+                      (cartPopUpChange)="toggleCartPopUp($event)"
+                  ></app-buy-cds-cart>
+              </section>
+              <section class="productInfo_section"
+                  [ngStyle]="{'z-index':showItemPopUp ? '4' : '1'}">
+                  <app-buy-cds-info
+                      [(itemPopUp)] = "showItemPopUp"
+                      [chosenItem] = "selectedItem"
+                      (addedOrder)="applyOrder($event)"
+                  >
+                  </app-buy-cds-info>
+              </section>
+  
+  
+  
+  
+    </div>
+    
+    </div>
