@@ -21,8 +21,6 @@ export class ToTopBtnComponent implements OnInit {
     else {
       this.atTop = true;
     }
-
-    console.log(this.atTop);
 }
 
   toTop(){

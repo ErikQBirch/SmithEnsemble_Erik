@@ -26,6 +26,7 @@ export class BuyCdsComponent implements OnInit {
   showCartPopUp = false;
   showItemPopUp = false;
   sumTotal = 0;
+  TAX = 0.0745;
 
   constructor(private route: ActivatedRoute){}
 
@@ -38,7 +39,7 @@ export class BuyCdsComponent implements OnInit {
     
     if(this.sumTotal != this.changedTotal){
       this.sumTotal = Math.round(this.changedTotal*100)/100;
-      this.salesTax = Math.round((this.sumTotal*0.07)*100)/100
+      this.salesTax = Math.round((this.sumTotal*this.TAX)*100)/100
       this.grandTotalCost = Math.round((this.sumTotal + this.salesTax + this.shippingCost)*100)/100;
     }
     
@@ -88,6 +89,8 @@ export class BuyCdsComponent implements OnInit {
     switch(queryParams.start){
       case "AllThings":
       case "BrightlyBeams":
+      case "Loss":
+      case "Refraction":
         this.selectItem(queryParams.start)
         break;
       default:

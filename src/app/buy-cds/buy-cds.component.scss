@@ -79,6 +79,8 @@
 }
 @media only all and (min-width: 760px) {
   .sales-floor{
+    width: 80%;
+    margin: 0 auto;
     div{
       display:flex;
       .purchase-item{
@@ -107,7 +109,8 @@
   .sales-floor{
     div{
       .purchase-item{
-        width: 35%;
+        margin: 2.5rem auto;
+        // width: 35%;
           figure{
             img{
             }

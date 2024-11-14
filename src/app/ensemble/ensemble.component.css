@@ -46,13 +46,43 @@
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+    position: relative;
+  }
+  .container .row .col-md #banner div#preview {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeOutAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+  }
+  .container .row .col-md #banner div#preview:hover, .container .row .col-md #banner div#preview:active {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  .container .row .col-md #banner div#preview span {
+    color: white;
+    font-size: 24px;
+    position: absolute;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
   .container .row .col-md #banner img {
     content: url("../../assets/images/SmithEnsemblePics/SmithEnsemble-Cover - Copy.jpg");
   }
+  .container .row .col-md #previewBtn_mobile {
+    margin-top: 2.5rem;
+  }
   .container .row .col-md .listen-now .scripture-quote {
-    margin: 1rem auto;
-    padding: 0.01em 2em 1em 2em;
+    margin: 0rem auto;
+    padding: 0em 2em 1em 2em;
     font-size: 16px;
     font-style: italic;
   }
@@ -100,7 +130,7 @@
     justify-content: space-around;
     width: 80%;
   }
-  .container #videoSamples div#videoHolder iframe {
+  .container #videoSamples div#videoHolder video {
     display: flex;
     margin: 0 auto 2.5rem auto;
   }
@@ -133,7 +163,7 @@
     width: 100%;
     margin: 0 auto;
   }
-  #samplePopUp div.iframe-container iframe {
+  #samplePopUp div.iframe-container video {
     width: 360px;
     height: 300px;
   }
@@ -142,6 +172,10 @@
     width: fit-content;
     padding: 0.5rem;
     margin: 5rem auto;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
+    color: white;
+    border-radius: 2.5px;
   }
 }
 @media only all and (min-width: 760px) {
@@ -164,7 +198,7 @@
   .container .my-text-info p {
     font-size: 18px;
   }
-  #samplePopUp div.iframe-container iframe {
+  #samplePopUp div.iframe-container video {
     width: 950px;
     height: 500px;
   }
@@ -173,8 +207,14 @@
   .container h3 {
     margin-top: 40px;
   }
+  .container .row .col-md #banner div#preview {
+    display: flex;
+  }
   .container .row .col-md #banner img {
     content: url("../../assets/images/SmithEnsemblePics/SmithBanner.jpg");
+  }
+  .container .row .col-md #previewBtn_mobile {
+    display: none;
   }
   .container .row .col-md .listen-now .scripture-quote {
     font-size: 30px;

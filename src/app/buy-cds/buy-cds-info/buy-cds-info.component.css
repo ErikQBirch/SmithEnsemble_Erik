@@ -1,6 +1,10 @@
 @media only all and (min-width: 0) {
   #itemPopUp {
     padding: 2rem;
+    background: rgba(173, 132, 54, 0.25);
+    padding: 2rem;
+    width: 95%;
+    margin: 0 auto;
   }
   #itemPopUp #productImgs div.imgHolder {
     margin: 2.5rem auto;

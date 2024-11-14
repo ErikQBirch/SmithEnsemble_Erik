@@ -26,6 +26,7 @@ export class EnsembleComponent implements OnInit {
   showVideo(){
     // let hero = this.videoHolder.nativeElement.children;
     // hero[1].pause();
+    console.log(this.showVideo_bool)
     this.showVideo_bool = true;
   }
 

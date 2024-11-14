@@ -17,8 +17,12 @@
     <div class="row">
         <div class="col-md">
             <figure id="banner">
+                <div id="preview" (click)="showVideo()">
+                    <span  id="previewBtn">Click for Special Preview!</span>
+                </div>
                 <img class="center" src="../assets/images/SmithEnsemblePics/SmithEnsemble-Cover - Copy.jpg">
             </figure>
+            <button id="previewBtn_mobile" (click)="showVideo()">Click for Special Preview!</button>
         </div>
     </div>
 
@@ -191,7 +195,9 @@
 <div id="samplePopUp"
     *ngIf="showVideo_bool">
     <div class="iframe-container">
-        <iframe src="https://www.youtube.com/embed/JnGAuYPwVaM?si=ls2fd8P9OXuMo8iA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <video id="video" width="100%" autoplay [loop]="'loop'" [controlsList]="'nodownload'">
+            <source src="../../assets/SampleVideo.mp4" type="video/mp4">
+        </video>
     </div>
     <button (click)="hideVideo()">Close</button>
 </div>

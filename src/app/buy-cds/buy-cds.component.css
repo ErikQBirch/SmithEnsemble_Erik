@@ -63,6 +63,10 @@
   }
 }
 @media only all and (min-width: 760px) {
+  .sales-floor {
+    width: 80%;
+    margin: 0 auto;
+  }
   .sales-floor div {
     display: flex;
   }
@@ -80,9 +84,9 @@
 }
 @media only all and (min-width: 992px) {
   .sales-floor div .purchase-item {
-    width: 35%;
+    margin: 2.5rem auto;
   }
   .sales-floor button {
     font-size: 16px;
   }
-}/*# sourceMappingURL=shop.component.css.map */
+}/*# sourceMappingURL=buy-cds.component.css.map */

@@ -11,14 +11,20 @@
     padding: 2.5rem 0;
     z-index: 3;
   }
-  .layer3 ul {
+  .layer3 #cart_display {
+    background-color: rgba(173, 132, 54, 0.25);
+    width: 95%;
+    padding: 2.5rem;
+    margin: 0 auto;
+  }
+  .layer3 #cart_display ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     list-style-type: circle;
     padding: 0;
   }
-  .layer3 ul li {
+  .layer3 #cart_display ul li {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -29,7 +35,7 @@
     background-color: rgba(255, 255, 255, 0.75);
     margin: 1rem auto;
   }
-  .layer3 ul li button {
+  .layer3 #cart_display ul li button {
     padding: 0 2.5rem;
     width: -moz-fit-content;
     width: fit-content;
@@ -74,7 +80,7 @@
   }
 }
 @media only all and (min-width: 992px) {
-  .layer3 ul {
+  .layer3 #cart_display ul {
     font-size: 20px;
   }
   .layer3 div#appliedCosts {
