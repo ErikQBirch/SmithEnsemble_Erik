@@ -39,6 +39,8 @@ import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { WoodsmithComponent } from './woodsmith/woodsmith.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ToTopBtnComponent } from './to-top-btn/to-top-btn.component';
+import { WoodsmithlinksComponent } from './woodsmithlinks/woodsmithlinks.component';
+import { IconsWoodsmithComponent } from './icons-woodsmith/icons-woodsmith.component';
 
 
 //z import { NgxPayPalModule } from 'ngx-paypal';
@@ -80,6 +82,8 @@ const appRoutes: Routes = [
     WoodsmithComponent,
     PageNotFoundComponent,
     ToTopBtnComponent,
+    WoodsmithlinksComponent,
+    IconsWoodsmithComponent,
 
 
   ],

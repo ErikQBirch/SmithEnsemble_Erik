@@ -1,0 +1,26 @@
+
+ul{
+
+  display: flex;
+
+  justify-content: center;
+
+  list-style: none;
+  
+  padding-right: 3em;
+}
+
+li{
+  padding: 1em;
+}
+
+
+a{
+  text-decoration: none;
+}
+
+img{
+  height: 40px;
+  width: 40px;
+  }
+  
