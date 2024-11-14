@@ -24,6 +24,9 @@ export class ShopInfoComponent implements OnInit{
   productName: string = ""
   productPrice: number = 0;
 
+  zoomIn_pic: string = ""
+  zoomIn_bool: boolean = false;
+
 
   addToCart(){
     switch (this.chosenItem){
@@ -59,6 +62,16 @@ export class ShopInfoComponent implements OnInit{
     this.itemPopUpChange.emit(this.itemPopUp);
   }
 
+  closeZoomIn(){
+    this.zoomIn_bool = false;
+  }
+
+  zoomIn(pic: String){
+    this.zoomIn_pic = "../../assets/images/SmithEnsemblePics/"+pic;
+    this.zoomIn_bool = true;
+  }
+
+  
   ngOnInit(): void {  
   }
   

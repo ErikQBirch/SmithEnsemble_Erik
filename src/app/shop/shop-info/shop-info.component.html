@@ -3,10 +3,10 @@
     <section id="itemPopUp">
       <div id="productImgs">
           <div class="imgHolder">
-            <figure>
+            <figure (click)="zoomIn(AlbumInfo.AlbumCovers[chosenItem]);">
               <img src="../../assets/images/SmithEnsemblePics/{{AlbumInfo.AlbumCovers[chosenItem]}}" alt="{{AlbumInfo.Titles[chosenItem]}}">
             </figure>
-            <figure>
+            <figure (click)="zoomIn(AlbumInfo.SecondaryPics[chosenItem]);">
               <img src="../../assets/images/SmithEnsemblePics/{{AlbumInfo.SecondaryPics[chosenItem]}}" alt="{{AlbumInfo.Titles[chosenItem]}}">
             </figure>
           </div>
@@ -28,9 +28,11 @@
       </div>
       <button id="closeBtn" (click)="closePopUp();">Back to Catalog</button>
     </section>
-    <section id="zoomIn">
-      <figure>
-        <img>
-      </figure>
-    </section>
+    <ng-template [ngIf]="zoomIn_bool">
+      <section id="zoomIn" (click)="closeZoomIn()">
+        <figure>
+          <img src="{{zoomIn_pic}}" alt="zoomIn_pic">
+        </figure>
+      </section>
+    </ng-template>
 </ng-template>
