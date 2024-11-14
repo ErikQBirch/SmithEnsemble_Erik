@@ -35,38 +35,14 @@
     .row{
       position:relative;
       overflow:hidden;
-      #videoHolder{
-        position:relative;
-        overflow:hidden;
-        display:flex;
-        // min-height: 27.5vh;
-        // max-height:45vh;
-        cursor: pointer;
-        .center {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
-          width: 100%;
-          position:absolute;
-          top: 0;
-      
-          animation:fadeInAnimation ease 1.5s;
-          animation-iteration-count: 1; 
-          animation-fill-mode: forwards;
-        }
-        video{
-        }
-        .fadeOut_scss{
-          animation:fadeOutAnimation ease 1.5s;
-          animation-iteration-count: 1; 
-          animation-fill-mode: forwards;
-        }
-    
-      }
+
       .col-md{
         #banner{
           // border: solid red 5px;
           // box-shadow: 0px -50px 50px rgba(255,255,255,1) inset;
+          animation:fadeInAnimation ease 1s;
+          animation-iteration-count: 1; 
+          animation-fill-mode: forwards;
           img{
             content: url("../../assets/images/SmithEnsemblePics/SmithEnsemble-Cover - Copy.jpg")
           }

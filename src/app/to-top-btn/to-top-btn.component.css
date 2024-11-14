@@ -1,0 +1,11 @@
+@media only all and (min-width: 0) {
+  button {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 50px;
+    height: 45px;
+    border-radius: 5px;
+    z-index: 3;
+  }
+}/*# sourceMappingURL=to-top-btn.component.css.map */

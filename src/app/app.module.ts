@@ -38,6 +38,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { WoodsmithComponent } from './woodsmith/woodsmith.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ToTopBtnComponent } from './to-top-btn/to-top-btn.component';
 
 
 //z import { NgxPayPalModule } from 'ngx-paypal';
@@ -78,6 +79,7 @@ const appRoutes: Routes = [
     ComingSoonComponent,
     WoodsmithComponent,
     PageNotFoundComponent,
+    ToTopBtnComponent,
 
 
   ],

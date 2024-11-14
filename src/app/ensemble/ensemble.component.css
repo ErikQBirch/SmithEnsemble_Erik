@@ -42,25 +42,8 @@
     position: relative;
     overflow: hidden;
   }
-  .container .row #videoHolder {
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    cursor: pointer;
-  }
-  .container .row #videoHolder .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    animation: fadeInAnimation ease 1.5s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  .container .row #videoHolder .fadeOut_scss {
-    animation: fadeOutAnimation ease 1.5s;
+  .container .row .col-md #banner {
+    animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }

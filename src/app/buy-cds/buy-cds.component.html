@@ -21,8 +21,7 @@
                       </ng-template>
                   </section>
               </ng-template>
-              <section class="cart_section"
-                  [ngStyle]="{'z-index':showCartPopUp ? '4' : '1'}">
+              <section class="cart_section">
                   <app-buy-cds-cart 
                       [(cartPopUp)] = "showCartPopUp"
                       [(soonToPurchase)]="myOrders"
@@ -31,8 +30,7 @@
                       (cartPopUpChange)="toggleCartPopUp($event)"
                   ></app-buy-cds-cart>
               </section>
-              <section class="productInfo_section"
-                  [ngStyle]="{'z-index':showItemPopUp ? '4' : '1'}">
+              <section class="productInfo_section">
                   <app-buy-cds-info
                       [(itemPopUp)] = "showItemPopUp"
                       [chosenItem] = "selectedItem"
