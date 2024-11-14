@@ -46,10 +46,22 @@
     box-shadow: 0 5px 20px white;
     overflow: hidden;
     border-radius: 5px;
+    width: 75vw;
   }
   #zoomIn figure img {
     border-radius: 5px;
     width: 100%;
+  }
+}
+@media only all and (min-width: 760px) {
+  #itemPopUp #productImgs div.imgHolder figure {
+    width: 300px;
+  }
+  #zoomIn {
+    cursor: pointer;
+  }
+  #zoomIn figure {
+    width: 50vw;
   }
 }
 @media only all and (min-width: 992px) {
@@ -72,4 +84,10 @@
     padding: 1rem 1.85rem;
     margin: 2.5rem;
   }
-}/*# sourceMappingURL=shop-info.component.css.map */
+  #zoomIn {
+    cursor: pointer;
+  }
+  #zoomIn figure {
+    width: 30vw;
+  }
+}/*# sourceMappingURL=buy-cds-info.component.css.map */

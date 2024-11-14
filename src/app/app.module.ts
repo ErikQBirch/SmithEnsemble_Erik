@@ -29,16 +29,15 @@ import { MatListModule } from '@angular/material/list';
 import { SmithsixlinksComponent } from './smithsixlinks/smithsixlinks.component';
 import { SmithensemblelinksComponent } from './smithensemblelinks/smithensemblelinks.component';
 import { IconsSmithsixComponent } from './icons-smithsix/icons-smithsix.component';
+
 import { BuyCdsComponent } from './buy-cds/buy-cds.component';
-import { BuyCdsInfoComponent } from './buy-cds-info/buy-cds-info.component';
-import { BuyCdsCartComponent } from './buy-cds-cart/buy-cds-cart.component';
+import { BuyCdsInfoComponent } from './buy-cds/buy-cds-info/buy-cds-info.component';
+import { BuyCdsCartComponent } from './buy-cds/buy-cds-cart/buy-cds-cart.component';
+
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { ComingSoonComponent } from './coming-soon/coming-soon.component';
 import { WoodsmithComponent } from './woodsmith/woodsmith.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ShopComponent } from './shop/shop.component';
-import { ShopCartComponent } from './shop/shop-cart/shop-cart.component';
-import { ShopInfoComponent } from './shop/shop-info/shop-info.component';
 
 
 //z import { NgxPayPalModule } from 'ngx-paypal';
@@ -54,7 +53,6 @@ const appRoutes: Routes = [
   { path: 'videos', component: VideosComponent },
   { path: 'contact-us', component: ContactUsComponent},
   { path: 'coming-soon', component: ComingSoonComponent},
-  { path: 'shop', component: ShopComponent},
   { path: '**', pathMatch: 'full', component:PageNotFoundComponent}
 ];
 
@@ -80,13 +78,7 @@ const appRoutes: Routes = [
     ComingSoonComponent,
     WoodsmithComponent,
     PageNotFoundComponent,
-    ShopComponent,
-    ShopCartComponent,
-    ShopInfoComponent,
 
-
- 
-  
 
   ],
   imports: [

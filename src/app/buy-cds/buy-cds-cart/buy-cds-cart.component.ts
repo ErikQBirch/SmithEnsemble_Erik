@@ -7,11 +7,11 @@ import { OrderInfo } from '../orderInfo';
 import { allCosts } from '../allCosts';
 
 @Component({
-  selector: 'app-shop-cart',
-  templateUrl: './shop-cart.component.html',
-  styleUrls: ['./shop-cart.component.css']
+  selector: 'app-buy-cds-cart',
+  templateUrl: './buy-cds-cart.component.html',
+  styleUrls: ['./buy-cds-cart.component.css']
 })
-export class ShopCartComponent implements OnInit {
+export class BuyCdsCartComponent implements OnInit {
   @Input() cartPopUp:boolean;
   @Input() checkOutPopUp: boolean = false;
   @Input() customerOrder: allCosts;

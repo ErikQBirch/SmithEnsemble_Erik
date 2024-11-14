@@ -1,22 +1,19 @@
 import { AfterViewChecked, AfterViewInit, Component, ElementRef, Input, OnInit} from '@angular/core';
-import { OrderInfo } from './orderInfo';
-import { allCosts } from './allCosts';
-import { AlbumInfo } from './AlbumInfo';
+import { OrderInfo } from '../buy-cds-info/orderInfo';
+import { allCosts } from '../buy-cds-cart/allCosts';
 import { ActivatedRoute } from '@angular/router';
 import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-buy-cds',
-  templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css'],
+  templateUrl: './buy-cds.component.html',
+  styleUrls: ['./buy-cds.component.css'],
 })
-export class ShopComponent implements OnInit {
+export class BuyCdsComponent implements OnInit {
   @Input() salesTax: number = 0;
   @Input() totalCost: number = 0;
   @Input() grandTotalCost: number = 0;
   @Input() myOrders = [];
-
-  AlbumInfo = new AlbumInfo();
   
   changedTotal = 0;
   customerOrder = new allCosts(0,0,0,0);
@@ -72,7 +69,6 @@ export class ShopComponent implements OnInit {
     this.additionalCosts(this.myOrders);
   }
   selectItem(itemName:string){
-    console.log(itemName);
     this.showItemPopUp = true;
     this.selectedItem = itemName;
   }

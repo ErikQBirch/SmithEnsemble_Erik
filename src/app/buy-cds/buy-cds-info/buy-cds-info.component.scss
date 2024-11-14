@@ -56,6 +56,7 @@
       box-shadow: 0 5px 20px white;
       overflow:hidden;
       border-radius: 5px;
+      width: 75vw;
       img{
         border-radius: 5px;
         width: 100%;
@@ -63,7 +64,41 @@
     }
   }
 }
-@media only all and (min-width: 760px) {}
+@media only all and (min-width: 760px) {
+  #itemPopUp{
+    #productImgs{
+      div.imgHolder{
+        figure{
+          width: 300px;
+          img{
+          }
+        }
+      }
+    }
+    #productInfo{
+      h1{
+      }
+      ol{
+        li{
+        }
+      }
+      #productInputs{
+        input{}
+        button{}
+      }
+    }
+    #closeBtn{
+    }
+  }
+  #zoomIn{
+    cursor:pointer;
+    figure {
+      width: 50vw;
+      img{
+      }
+    }
+  }
+}
 @media only all and (min-width: 992px) {
   #itemPopUp{
     #productImgs{
@@ -99,6 +134,14 @@
       font-size: 14px;
       padding: 1rem 1.85rem;
       margin: 2.5rem;
+    }
+  }
+  #zoomIn{
+    cursor:pointer;
+    figure {
+      width: 30vw;
+      img{
+      }
     }
   }
 }

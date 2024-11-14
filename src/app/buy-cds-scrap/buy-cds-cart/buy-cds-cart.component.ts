@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild} from '@angular/core';
 import { render } from 'creditcardpayments/creditCardPayments';
-import { MailService } from '../services/mail.service';
+import { MailService } from '../../services/mail.service';
 import { NgForm } from '@angular/forms';
 
 import { OrderInfo } from '../buy-cds-info/orderInfo';

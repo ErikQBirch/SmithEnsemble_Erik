@@ -8,8 +8,8 @@ export class AlbumInfo{
       "Refraction":"Refraction"
     },
     public AlbumCovers = {
-      "AllThings":"AllThings_cover.png",
-      "BrightlyBeams":"BrightlyBeams_cover.png",
+      "AllThings":"AllThings_cover.jpg",
+      "BrightlyBeams":"BrightlyBeams_cover.jpg",
       "Loss":"Loss_cover.jpg",
       "Refraction":"Refraction_cover.jpg"
     },

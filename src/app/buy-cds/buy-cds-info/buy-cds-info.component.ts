@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnInit, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { OrderInfo } from '../orderInfo';
-import { AlbumInfo } from '../AlbumInfo';
+import { AlbumInfo } from '../albumInfo';
 
 @Component({
-  selector: 'app-shop-info',
-  templateUrl: './shop-info.component.html',
-  styleUrls: ['./shop-info.component.css']
+  selector: 'app-buy-cds-info',
+  templateUrl: './buy-cds-info.component.html',
+  styleUrls: ['./buy-cds-info.component.css']
 })
-export class ShopInfoComponent implements OnInit{
+export class BuyCdsInfoComponent implements OnInit{
   @Input() itemPopUp:boolean;
   @Input() chosenItem:string = "";
   
