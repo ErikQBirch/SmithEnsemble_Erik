@@ -29,20 +29,8 @@ export class BuyCdsInfoComponent implements OnInit{
 
 
   addToCart(){
-    switch (this.chosenItem){
-      case "AllThings":
-        this.productName = this.AlbumInfo.Titles.AllThings;
-        this.productPrice = this.AlbumInfo.Prices.AllThings;
-        break;
-      case "BrightlyBeams":
-        this.productName = this.AlbumInfo.Titles.BrightlyBeams;
-        this.productPrice = this.AlbumInfo.Prices.BrightlyBeams;
-        break;
-      default:
-        this.productName = this.AlbumInfo.Titles.AllThings;
-        this.productPrice = this.AlbumInfo.Prices.AllThings;
-        break;
-    }
+    this.productName = this.AlbumInfo.Titles[this.chosenItem];
+    this.productPrice = this.AlbumInfo.Prices[this.chosenItem];
 
     this.myOrder = new OrderInfo(
       this.orderID = this.orderID+1,

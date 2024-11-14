@@ -22,7 +22,7 @@ export class BuyCdsComponent implements OnInit {
   customerOrder = new allCosts(0,0,0,0);
   duplicate = false;
   selectedItem = "";
-  shippingCost: number = 5;
+  shippingCost: number = 4.99;
   showCartPopUp = false;
   showItemPopUp = false;
   sumTotal = 0;

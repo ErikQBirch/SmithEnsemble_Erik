@@ -16,7 +16,7 @@
           <h1 id="productName">
               {{AlbumInfo.Titles[chosenItem]}}
           </h1>
-          <h3>(${{AlbumInfo.Prices[chosenItem]}}.00)</h3>
+          <h3>(${{AlbumInfo.Prices[chosenItem]}})</h3>
         </div>
         <ol>
           <li *ngFor="let song of AlbumInfo.Songs[chosenItem]">{{song}}</li>

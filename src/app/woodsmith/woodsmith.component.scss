@@ -85,9 +85,12 @@
         }
       }
     }
-    .col-md-12{
+    .my-text-info{
       padding: 2.5rem;
       margin-top: -5rem;
+      width: 87.5%;
+      margin: 0 auto;
+      float:none;
       h3{
         p{}
       }
@@ -168,6 +171,9 @@
   figure{
     width: 50vw;
   }
+  h3{
+    font-size: 36px;
+  }
   p {
     font-size: 18px;
   }
@@ -244,7 +250,7 @@
         }
       }
     }
-    .col-md-12{
+    .my-text-info{
       padding: 5rem;
       h3{
         p{

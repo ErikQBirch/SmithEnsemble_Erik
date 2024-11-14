@@ -83,9 +83,12 @@
   .container .row .col-md .listen-now figure img {
     padding: 2em;
   }
-  .container .col-md-12 {
+  .container .my-text-info {
     padding: 2.5rem;
     margin-top: -5rem;
+    width: 87.5%;
+    margin: 0 auto;
+    float: none;
   }
   .container #videoSamples {
     display: flex;
@@ -121,6 +124,9 @@
   figure {
     width: 50vw;
   }
+  h3 {
+    font-size: 36px;
+  }
   p {
     font-size: 18px;
   }
@@ -146,10 +152,10 @@
   .container .row .col-md .listen-now .my-container a:link .album-cover {
     width: 100%;
   }
-  .container .col-md-12 {
+  .container .my-text-info {
     padding: 5rem;
   }
-  .container .col-md-12 h3 p {
+  .container .my-text-info h3 p {
     font-size: 18px;
   }
   .container #videoSamples div#videoHolder {

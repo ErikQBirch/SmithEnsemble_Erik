@@ -20,10 +20,10 @@ export class AlbumInfo{
       "Refraction":"Refraction_second.jpg"
     },
     public Prices = {
-      "AllThings":12.00,
-      "BrightlyBeams":10.00,
-      "Loss":14.00,
-      "Refraction":16.00
+      "AllThings":11.99,
+      "BrightlyBeams":9.99,
+      "Loss":13.99,
+      "Refraction":15.99
     },
     public Songs = {
       "AllThings": [

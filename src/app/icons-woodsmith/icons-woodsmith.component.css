@@ -1,26 +1,23 @@
-
-ul{
-
+ul {
   display: flex;
-
   justify-content: center;
-
   list-style: none;
-  
   padding-right: 3em;
 }
-
-li{
+ul li {
   padding: 1em;
 }
-
-
-a{
+ul li a {
   text-decoration: none;
 }
-
-img{
+ul li a img {
   height: 40px;
   width: 40px;
-  }
-  
+}
+ul li a i {
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 45px;
+}/*# sourceMappingURL=icons-woodsmith.component.css.map */

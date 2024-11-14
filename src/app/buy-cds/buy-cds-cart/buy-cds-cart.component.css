@@ -5,10 +5,8 @@
   }
   .layer3 {
     width: 100%;
-    position: absolute;
     top: 0;
     background-color: #F5F5F5;
-    padding: 2.5rem 0;
     z-index: 3;
   }
   .layer3 #cart_display {
@@ -56,10 +54,8 @@
   }
   .layer2 {
     width: 100%;
-    position: absolute;
     top: 0;
     background-color: #F5F5F5;
-    padding: 2.5rem 0;
     z-index: 2;
     margin: 2.5rem auto;
   }
@@ -72,10 +68,8 @@
   }
   .layer1 {
     width: 100%;
-    position: absolute;
     top: 0;
     background-color: #F5F5F5;
-    padding: 2.5rem 0;
     z-index: 1;
   }
 }

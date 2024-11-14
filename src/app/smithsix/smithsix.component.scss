@@ -98,10 +98,14 @@
           }
         }
       }
-      .my-text-info{
-        h3{}
-        p{}
-      }
+    }
+    .my-text-info{
+      width: 87.5%;
+      margin: 0rem auto;
+      align-self:center;
+      float: none;
+      h3{}
+      p{}
     }
     #videoSamples{
       display:flex;
@@ -152,10 +156,10 @@
           }
         }
       }
-      .my-text-info{
-        h3{}
-        p{
-        }
+    }
+    .my-text-info{
+      h3{}
+      p{
       }
     }
     #videoSamples{
@@ -174,6 +178,9 @@
   @include universal_med;
   figure{
     width: 50vw;
+  }
+  h3{
+    font-size: 36px;
   }
   p {
     font-size: 18px;
@@ -203,10 +210,10 @@
           }
         }
       }
-      .my-text-info{
-        h3{}
+    }
+    .my-text-info{
 
-      }
+
     }
     #videoSamples{
       div#videoHolder{
@@ -248,11 +255,11 @@
           }
         }
       }
-      .my-text-info{
-        h3{}
-        p{
-          font-size: 18px;
-        }
+    }
+    .my-text-info{
+      h3{}
+      p{
+        font-size: 18px;
       }
     }
     #videoSamples{
@@ -301,11 +308,11 @@
           }
         }
       }
-      .my-text-info{
-        h3{}
-        p{
-          font-size: 18px;
-        }
+    }
+    .my-text-info{
+      h3{}
+      p{
+
       }
     }
     #videoSamples{

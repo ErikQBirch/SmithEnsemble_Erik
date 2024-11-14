@@ -90,6 +90,12 @@
   .container .row .col-md .listen-now .my-container:hover .cd-album-cover {
     transform: translateX(60%);
   }
+  .container .my-text-info {
+    width: 87.5%;
+    margin: 0rem auto;
+    align-self: center;
+    float: none;
+  }
   .container #videoSamples {
     display: flex;
     flex-direction: column;
@@ -123,6 +129,9 @@
   figure {
     width: 50vw;
   }
+  h3 {
+    font-size: 36px;
+  }
   p {
     font-size: 18px;
   }
@@ -143,7 +152,7 @@
   .container .row .col-md .listen-now .my-container {
     padding-top: 7.5rem;
   }
-  .container .row .my-text-info p {
+  .container .my-text-info p {
     font-size: 18px;
   }
   .container #videoSamples div#videoHolder {
@@ -167,8 +176,5 @@
   }
   .container .row .col-md .listen-now .scripture-quote h2 {
     font-size: 50px;
-  }
-  .container .row .my-text-info p {
-    font-size: 18px;
   }
 }/*# sourceMappingURL=smithsix.component.css.map */

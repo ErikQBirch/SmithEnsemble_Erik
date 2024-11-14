@@ -28,6 +28,8 @@
   }
   .container .row .col figure img {
     width: 100%;
+    box-shadow: 5px 5px 20px black;
+    border-radius: 5px;
   }
   .container .row .col .mt-8 {
     margin-top: 2.5rem;

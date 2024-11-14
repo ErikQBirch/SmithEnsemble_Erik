@@ -99,19 +99,20 @@ export class BuyCdsCartComponent implements OnInit {
   }
   
   async submitEmail(contactForm: NgForm) {
-    
-
     this.onSubmit = true;
-    // -- set formData values
     let formData: FormData = new FormData();
-    formData.append('name', this.contactFormValues.name);
-    formData.append('email', this.contactFormValues.email);
-    formData.append('body', this.contactFormValues.body);
-    // -- email customization
-    formData.append('access_key', "f001b29e-df74-456f-86bb-9f4c9f3c5c04");
-    formData.append('subject', 'Email Support From Your Site');
-    formData.append('from_name', 'Contact Notification');
-  
+
+    setTimeout(()=>{
+      formData.append('name', this.contactFormValues.name);
+      formData.append('email', this.contactFormValues.email);
+      formData.append('body', this.contactFormValues.body);
+      // -- email customization
+      formData.append('access_key', "f001b29e-df74-456f-86bb-9f4c9f3c5c04");
+      formData.append('subject', 'Email Support From Your Site');
+      formData.append('from_name', 'Contact Notification');
+    }, 100)
+
+    // -- set formData values
     try {
       // -- send email
       const res = await this.mailService.sendEmail(formData);

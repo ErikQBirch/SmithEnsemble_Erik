@@ -175,6 +175,10 @@
     display:flex;
     flex-direction: column;
     justify-content: center;
+
+    animation:fadeInAnimation ease 1s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: forwards;
     div.iframe-container{
       display:flex;
       align-items: center;
@@ -182,6 +186,7 @@
       width: 100%;
       margin: 0 auto;
       video{
+        border-radius: 5px;
         width: 360px;
         height: 300px;
       }
