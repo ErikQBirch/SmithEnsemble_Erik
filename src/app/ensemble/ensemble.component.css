@@ -134,6 +134,10 @@
     display: flex;
     margin: 0 auto 2.5rem auto;
   }
+  .container #videoSamples div#videoHolder iframe {
+    display: flex;
+    margin: 0 auto 2.5rem auto;
+  }
   #emailSignUp {
     background-color: rgb(129, 201, 199);
     padding: 1rem;
