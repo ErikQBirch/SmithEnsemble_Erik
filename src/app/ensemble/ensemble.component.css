@@ -89,7 +89,8 @@
   .container .row .col-md .listen-now .scripture-quote h2 {
     font-family: "Times New Roman", Times, serif;
     font-weight: bolder;
-    margin-top: 7.5rem;
+    margin-top: 3rem;
+    font-size: 24;
   }
   .container .row .col-md .listen-now .my-container .album-cover {
     position: relative;
@@ -187,6 +188,10 @@
   }
 }
 @media only all and (min-width: 760px) {
+  .container .row .col-md .listen-now .scripture-quote h2 {
+    font-size: 30px;
+    margin-top: 5rem;
+  }
   .container .my-text-info {
     padding: 0 5rem;
   }
